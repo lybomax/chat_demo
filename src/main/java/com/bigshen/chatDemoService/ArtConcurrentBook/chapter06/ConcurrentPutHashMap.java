@@ -4,8 +4,8 @@
  */
 package com.bigshen.chatDemoService.ArtConcurrentBook.chapter06;
 
-import java.util.*;
-import java.util.function.BiConsumer;
+import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * ²¢·¢put

@@ -1,7 +1,6 @@
 package com.bigshen.chatDemoService.sort;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * @Description:二分排序

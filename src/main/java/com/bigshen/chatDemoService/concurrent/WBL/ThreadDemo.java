@@ -1,8 +1,8 @@
 package com.bigshen.chatDemoService.concurrent.WBL;
 
-import javafx.concurrent.Task;
-
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * @ClassName Test

@@ -1,7 +1,5 @@
 package com.bigshen.chatDemoService.concurrent.thread.chap1;
 
-import java.sql.SQLOutput;
-
 public class Demo10 {
     public static void main(String[] args) {
         Thread t = new Demo10Thread();

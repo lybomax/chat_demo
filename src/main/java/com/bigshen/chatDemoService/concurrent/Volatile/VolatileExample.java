@@ -1,7 +1,5 @@
 package com.bigshen.chatDemoService.concurrent.Volatile;
 
-import javax.sound.midi.Soundbank;
-
 class VolatileExample {
     int a = 0;
     volatile boolean flag = false;

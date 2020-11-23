@@ -1,8 +1,6 @@
 package com.bigshen.chatDemoService.leetcode;
 
 
-import javax.swing.tree.TreeNode;
-
 /**
  * @ClassName IsSymmetric
  * @Description: TODO
