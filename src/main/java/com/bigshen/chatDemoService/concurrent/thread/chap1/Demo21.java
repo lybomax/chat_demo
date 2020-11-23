@@ -10,12 +10,12 @@ public class Demo21 {
     }
 }
 
-class Demo21Thread extends Thread{
+class Demo21Thread extends Thread {
     private long i = 0;
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             i++;
             System.out.println("i=" + i);
         }

@@ -14,20 +14,21 @@ public class Demo11 {
         Thread.sleep(10000);
         long start = Demo11Utils.start1 > Demo11Utils.start2 ? Demo11Utils.start2 : Demo11Utils.start1;
         long end = Demo11Utils.end1 > Demo11Utils.end2 ? Demo11Utils.end1 : Demo11Utils.end2;
-        System.out.println("耗时：" + (end - start) /1000 + "秒");
+        System.out.println("耗时：" + (end - start) / 1000 + "秒");
 
     }
 }
 
-class Demo11Utils{
+class Demo11Utils {
     static long start1;
     static long start2;
     static long end1;
     static long end2;
 }
 
-class Demo11Service{
-    /*synchronized*/ public void foo(){
+class Demo11Service {
+    /*synchronized*/
+    public void foo() {
         try {
             System.out.println(Thread.currentThread().getName() + "开始任务");
             Thread.sleep(3000);
@@ -35,15 +36,16 @@ class Demo11Service{
                 System.out.println(Thread.currentThread().getName() + "处理计算结果");
             }
             System.out.println(Thread.currentThread().getName() + "结束任务");
-        }catch(InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo11ThreadA extends Thread{
+class Demo11ThreadA extends Thread {
     private Demo11Service service;
-    public Demo11ThreadA(Demo11Service service){
+
+    public Demo11ThreadA(Demo11Service service) {
         this.service = service;
     }
 
@@ -55,9 +57,10 @@ class Demo11ThreadA extends Thread{
     }
 }
 
-class Demo11ThreadB extends Thread{
+class Demo11ThreadB extends Thread {
     private Demo11Service service;
-    public Demo11ThreadB(Demo11Service service){
+
+    public Demo11ThreadB(Demo11Service service) {
         this.service = service;
     }
 

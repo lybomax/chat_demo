@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class UserService {
-    private UserDao userDao ;
+    private UserDao userDao;
+
     @Autowired
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;

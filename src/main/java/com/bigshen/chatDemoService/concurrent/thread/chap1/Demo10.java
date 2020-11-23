@@ -11,14 +11,14 @@ public class Demo10 {
     }
 }
 
-class Demo10Thread extends Thread{
+class Demo10Thread extends Thread {
     @Override
     public void run() {
         try {
             System.out.println("线程开始于" + System.currentTimeMillis());
             Thread.sleep(2000);
             System.out.println("线程结束于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

@@ -8,7 +8,7 @@ package com.bigshen.chatDemoService.leetcode;
  *
  * 输入: 123
  * 输出: 321
- *  示例 2:
+ * 示例 2:
  *
  * 输入: -123
  * 输出: -321
@@ -24,26 +24,28 @@ package com.bigshen.chatDemoService.leetcode;
 public class Reverse {
     public static int reverse(int x) {
         long n = 0;
-        while(x != 0) {
-            n = n*10 + x%10;
-            x = x/10;
+        while (x != 0) {
+            n = n * 10 + x % 10;
+            x = x / 10;
         }
-        return (int)n==n? (int)n:0;
+        return (int) n == n ? (int) n : 0;
     }
+
     public static int reverse2(int x) {
-        long rst=0;
-        while(x!=0){
-            rst= rst*10+ x%10;
-            x=x/10;
+        long rst = 0;
+        while (x != 0) {
+            rst = rst * 10 + x % 10;
+            x = x / 10;
 
         }
-        if((int)rst!=rst){
+        if ((int) rst != rst) {
             return 0;
 
-        }else{
-            return (int)rst;
+        } else {
+            return (int) rst;
         }
     }
+
     public static void main(String[] args) {
         int reverse = reverse(322132131);
         System.out.println(reverse);

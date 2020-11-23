@@ -20,7 +20,7 @@ public class Demo05 {
         Thread[] consumers = new Thread[size];
 
         for (int i = 0; i < size; i++) {
-            char c = (char)('A' + i);
+            char c = (char) ('A' + i);
             producers[i] = new Demo05ProducerThread(service);
             producers[i].setName("生产者" + c);
             producers[i].start();
@@ -32,15 +32,15 @@ public class Demo05 {
     }
 }
 
-class Demo05Service{
+class Demo05Service {
     private Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
     private String val = "";
 
-    public void set(){
-        try{
+    public void set() {
+        try {
             lock.lock();
-            while(!"".equals(val)){
+            while (!"".equals(val)) {
                 System.out.println(Thread.currentThread().getName() + "开始等待");
                 condition.await();
             }
@@ -48,17 +48,17 @@ class Demo05Service{
             System.out.println(Thread.currentThread().getName() + "生产值：" + val);
             //condition.signal();
             condition.signalAll();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             lock.unlock();
         }
     }
 
-    public void get(){
-        try{
+    public void get() {
+        try {
             lock.lock();
-            while("".equals(val)){
+            while ("".equals(val)) {
                 System.out.println(Thread.currentThread().getName() + "开始等待");
                 condition.await();
             }
@@ -66,7 +66,7 @@ class Demo05Service{
             val = "";
 //            condition.signal();
             condition.signalAll();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             lock.unlock();
@@ -74,29 +74,31 @@ class Demo05Service{
     }
 }
 
-class Demo05ProducerThread extends Thread{
+class Demo05ProducerThread extends Thread {
     private Demo05Service service;
-    public Demo05ProducerThread(Demo05Service service){
+
+    public Demo05ProducerThread(Demo05Service service) {
         this.service = service;
     }
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             service.set();
         }
     }
 }
 
-class Demo05ConsumerThread extends Thread{
+class Demo05ConsumerThread extends Thread {
     private Demo05Service service;
-    public Demo05ConsumerThread(Demo05Service service){
+
+    public Demo05ConsumerThread(Demo05Service service) {
         this.service = service;
     }
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             service.get();
         }
     }

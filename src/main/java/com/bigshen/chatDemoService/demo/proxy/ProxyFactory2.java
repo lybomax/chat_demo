@@ -17,6 +17,7 @@ public class ProxyFactory2 {
     private static Object target;
     //维护关键点代码的类
     private static AOPTest aop;
+
     public static Object getProxyInstance(Object target_, AOPTest aop_) {
 //⽬标对象和关键点代码的类都是通过外界传递进来
         target = target_;

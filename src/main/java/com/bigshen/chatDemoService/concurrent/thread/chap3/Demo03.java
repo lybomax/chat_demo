@@ -15,9 +15,10 @@ public class Demo03 {
     }
 }
 
-class Demo03ThreadA extends Thread{
+class Demo03ThreadA extends Thread {
     private Object lock;
-    public Demo03ThreadA(Object lock){
+
+    public Demo03ThreadA(Object lock) {
         this.lock = lock;
     }
 
@@ -29,14 +30,16 @@ class Demo03ThreadA extends Thread{
                 lock.wait();
                 System.out.println("线程" + Thread.currentThread().getName() + "结束等待在" + System.currentTimeMillis());
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
-class Demo03ThreadB extends Thread{
+
+class Demo03ThreadB extends Thread {
     private Object lock;
-    public Demo03ThreadB(Object lock){
+
+    public Demo03ThreadB(Object lock) {
         this.lock = lock;
     }
 
@@ -49,7 +52,7 @@ class Demo03ThreadB extends Thread{
                 System.out.println("线程B结束发出通知在" + System.currentTimeMillis());
                 Thread.sleep(2000);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

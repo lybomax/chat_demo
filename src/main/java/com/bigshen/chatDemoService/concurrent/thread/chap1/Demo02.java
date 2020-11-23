@@ -8,7 +8,7 @@ public class Demo02 {
     }
 }
 
-class Demo02Thread extends Thread{
+class Demo02Thread extends Thread {
     @Override
     public void run() {
         System.out.println("运行了run方法");

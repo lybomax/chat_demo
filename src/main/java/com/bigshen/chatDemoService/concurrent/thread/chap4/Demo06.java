@@ -18,17 +18,19 @@ public class Demo06 {
     }
 }
 
-class Demo06Service{
+class Demo06Service {
     private Lock lock;
-    public Demo06Service(boolean isFair){
+
+    public Demo06Service(boolean isFair) {
         // 无参的ReentrantLock是非公平锁，通过boolean参数控制锁的类型，如果是true会使用公平锁，否则就是非公平锁
         lock = new ReentrantLock(isFair);
     }
-    public void foo(){
-        try{
+
+    public void foo() {
+        try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "获得锁定");
-        }finally {
+        } finally {
 
             lock.unlock();
         }
@@ -36,9 +38,10 @@ class Demo06Service{
     }
 }
 
-class Demo06Thread extends Thread{
+class Demo06Thread extends Thread {
     private Demo06Service service;
-    public Demo06Thread(Demo06Service service){
+
+    public Demo06Thread(Demo06Service service) {
         this.service = service;
     }
 

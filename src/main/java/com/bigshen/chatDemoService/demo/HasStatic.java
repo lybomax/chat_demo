@@ -5,7 +5,7 @@ package com.bigshen.chatDemoService.demo;
  * @Author: byj
  * @Date: 2019/12/2 9:56
  */
-public class HasStatic  {
+public class HasStatic {
     private static int x = 100;
 
     public static void main(String[] args) {

@@ -9,25 +9,28 @@ public class Demo18 {
         t3.start();
     }
 }
-class Demo18ThreadA extends Thread{
+
+class Demo18ThreadA extends Thread {
     @Override
     public void run() {
         try {
             System.out.println("线程A开始于" + System.currentTimeMillis());
             Thread.sleep(5000);
             System.out.println("线程A结束于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    synchronized public void foo(){
+    synchronized public void foo() {
         System.out.println("方法执行时间" + System.currentTimeMillis());
     }
 }
-class Demo18ThreadB extends Thread{
+
+class Demo18ThreadB extends Thread {
     private Demo18ThreadA t;
-    public Demo18ThreadB(Demo18ThreadA t){
+
+    public Demo18ThreadB(Demo18ThreadA t) {
         this.t = t;
     }
 
@@ -42,15 +45,17 @@ class Demo18ThreadB extends Thread{
                     String s = new String();
                     Math.random();
                 }
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
 }
-class Demo18ThreadC extends Thread{
+
+class Demo18ThreadC extends Thread {
     private Demo18ThreadA t;
-    public Demo18ThreadC(Demo18ThreadA t){
+
+    public Demo18ThreadC(Demo18ThreadA t) {
         this.t = t;
     }
 

@@ -5,10 +5,10 @@ package com.bigshen.chatDemoService.design.adapter;
  * @Author: byj
  * @Date: 2019/12/3 16:06
  */
-public class VlcPlayer implements AdvancedMediaPlayer{
+public class VlcPlayer implements AdvancedMediaPlayer {
     @Override
     public void playVlc(String fileName) {
-        System.out.println("Playing vlc file. Name: "+ fileName);
+        System.out.println("Playing vlc file. Name: " + fileName);
     }
 
     @Override

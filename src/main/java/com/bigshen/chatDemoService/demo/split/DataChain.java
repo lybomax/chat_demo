@@ -9,7 +9,7 @@ package com.bigshen.chatDemoService.demo.split;
  **/
 public class DataChain {
 
-    private  DataNode head;
+    private DataNode head;
 
     public DataChain(int size) {
         DataNode head = new DataNode(0);

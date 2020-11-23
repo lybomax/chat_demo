@@ -8,15 +8,19 @@ package com.bigshen.chatDemoService.design.abstractFactory;
 public abstract class AbstractFactory {
     /**
      * 抽象颜色
+     *
      * @param color
+     *
      * @return
      */
     abstract Color getColor(String color);
 
     /**
      * 抽象形状
+     *
      * @param shape
+     *
      * @return
      */
-    abstract Shape getShape(String shape) ;
+    abstract Shape getShape(String shape);
 }

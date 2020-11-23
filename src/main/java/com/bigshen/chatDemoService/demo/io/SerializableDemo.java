@@ -12,17 +12,17 @@ import java.io.ObjectInputStream;
 public class SerializableDemo {
     public static void main(String[] args) throws Exception {
         //对象输出流
-        ObjectInputStream oos=new ObjectInputStream(new FileInputStream
+        ObjectInputStream oos = new ObjectInputStream(new FileInputStream
                 (new File("D://obj")));
-        User user1 = (User)oos.readObject();
+        User user1 = (User) oos.readObject();
         System.out.println(user1);
         oos.close();
 
         //对象输入流
         ObjectInputStream objectInputStream =
                 new ObjectInputStream(new FileInputStream(new File("D://obj")));
-         User user2 = (User)objectInputStream.readObject();
-         System.out.println(user2);
-         objectInputStream.close();
+        User user2 = (User) objectInputStream.readObject();
+        System.out.println(user2);
+        objectInputStream.close();
     }
 }

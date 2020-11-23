@@ -18,7 +18,7 @@ public class Demo25 {
     }
 }
 
-class Demo25Thread extends Thread{
+class Demo25Thread extends Thread {
     @Override
     public void run() {
         long start = System.currentTimeMillis();
@@ -26,10 +26,11 @@ class Demo25Thread extends Thread{
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 50000; j++) {
                 Random r = new Random();
-                count += i * j + r.nextInt();;
+                count += i * j + r.nextInt();
+                ;
             }
         }
         long end = System.currentTimeMillis();
-        System.out.println("线程" + this.getName() + "执行完成使用了" + (end  - start) + "毫秒");
+        System.out.println("线程" + this.getName() + "执行完成使用了" + (end - start) + "毫秒");
     }
 }

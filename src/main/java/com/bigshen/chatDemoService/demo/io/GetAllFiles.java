@@ -14,24 +14,24 @@ public class GetAllFiles {
     }
 
     private static void getAllFiles(String path) {
-        File file=new File(path);
-        if (file.exists()){
+        File file = new File(path);
+        if (file.exists()) {
             File[] files = file.listFiles();
-            if (files!=null && files.length==0){
+            if (files != null && files.length == 0) {
                 System.out.println("文件为空");
-            }else {
-                if (files!=null){
+            } else {
+                if (files != null) {
                     for (File file1 : files) {
-                         if (file1.isDirectory()){
+                        if (file1.isDirectory()) {
                             getAllFiles(file1.getAbsolutePath());
-                        }else{
-                            System.out.println("文件："+file1.getName());
+                        } else {
+                            System.out.println("文件：" + file1.getName());
                         }
                     }
                 }
 
             }
-        }else {
+        } else {
             System.out.println("文件不存在");
         }
 

@@ -9,8 +9,8 @@ public class Demo09 {
     }
 }
 
-class Demo09Thread extends Thread{
-    public Demo09Thread(){
+class Demo09Thread extends Thread {
+    public Demo09Thread() {
         System.out.println("构造方法开始");
         System.out.println(Thread.currentThread().isAlive());
         System.out.println(this.isAlive());

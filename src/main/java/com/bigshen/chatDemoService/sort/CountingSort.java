@@ -13,7 +13,7 @@ public class CountingSort {
 
 
     /**
-     计数排序，a是数组，n是数组大小。假设数组中存储的都是非负整数。
+     * 计数排序，a是数组，n是数组大小。假设数组中存储的都是非负整数。
      */
     public static void countingSort(int[] a, int n) {
         if (n <= 1) return;
@@ -38,14 +38,14 @@ public class CountingSort {
 
         // 依次累加
         for (int i = 1; i <= max; ++i) {
-            c[i] = c[i-1] + c[i];
+            c[i] = c[i - 1] + c[i];
         }
 
         // 临时数组r，存储排序之后的结果
         int[] r = new int[n];
         // 计算排序的关键步骤，有点难理解
         for (int i = n - 1; i >= 0; --i) {
-            int index = c[a[i]]-1;
+            int index = c[a[i]] - 1;
             r[index] = a[i];
             c[a[i]]--;
         }
@@ -57,9 +57,9 @@ public class CountingSort {
     }
 
     public static void main(String[] args) {
-        int score[]={12,89,43,34,56};
-        System.out.println("排序前的数组："+ Arrays.toString(score));
-        countingSort(score,score.length);
-        System.out.println("排列后的数组: "+Arrays.toString(score));
+        int score[] = {12, 89, 43, 34, 56};
+        System.out.println("排序前的数组：" + Arrays.toString(score));
+        countingSort(score, score.length);
+        System.out.println("排列后的数组: " + Arrays.toString(score));
     }
 }

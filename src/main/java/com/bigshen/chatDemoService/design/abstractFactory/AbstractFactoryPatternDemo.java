@@ -10,7 +10,7 @@ public class AbstractFactoryPatternDemo {
 
         //获取形状工厂
         AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
-        if (shapeFactory!=null){
+        if (shapeFactory != null) {
             //获取形状为 Circle 的对象
             Shape shape1 = shapeFactory.getShape("CIRCLE");
 
@@ -32,7 +32,7 @@ public class AbstractFactoryPatternDemo {
 
         //获取颜色工厂
         AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
-        if (colorFactory!=null){
+        if (colorFactory != null) {
             //获取颜色为 Red 的对象
             Color color1 = colorFactory.getColor("RED");
 

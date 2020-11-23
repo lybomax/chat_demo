@@ -14,17 +14,21 @@ import org.springframework.stereotype.Repository;
 public class UserDao {
     @Autowired
     AOPTest aop;
+
     public void save2() {
         begin();
         System.out.println("DB:保存⽤户");
         close();
     }
+
     public void begin() {
         System.out.println("开始事务");
     }
+
     public void close() {
         System.out.println("关闭事务");
     }
+
     public void save() {
         aop.begin();
         System.out.println("DB:保存⽤户");

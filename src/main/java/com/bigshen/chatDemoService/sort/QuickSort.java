@@ -11,15 +11,17 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {12, 2, 45, 6, 34, 77, 4, 22, 54, 36};
         System.out.println("排序前的数组：" + Arrays.toString(arr));
-        int[] array = quickSort(arr, 0, arr.length-1);
+        int[] array = quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组：" + Arrays.toString(array));
     }
 
     /**
      * 快速排序方法
+     *
      * @param array 数组
      * @param start 要排序的开始索引
-     * @param end 要排序的结束索引
+     * @param end   要排序的结束索引
+     *
      * @return
      */
     private static int[] quickSort(int[] array, int start, int end) {
@@ -36,11 +38,14 @@ public class QuickSort {
         }
         return array;
     }
+
     /**
      * 快速排序算法——partition分区
+     *
      * @param array{12, 2, 45, 6, 34, 77, 4, 22, 54, 36}
      * @param start
      * @param end
+     *
      * @return//;
      */
     private static int partition(int[] array, int start, int end) {
@@ -59,6 +64,7 @@ public class QuickSort {
 
     /**
      * 交换数组内两个元素
+     *
      * @param array
      * @param i
      * @param j

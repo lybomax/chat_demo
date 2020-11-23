@@ -36,7 +36,7 @@ public class WordFrequencyCount {
 
             //map.get(),通过键名来获取键值
             if (map.get(spilt[i]) == null) {
-            //map.put()将键值存储在map集合中，如果存在，那么就覆盖该键值，如果不存在就新建一个。
+                //map.put()将键值存储在map集合中，如果存在，那么就覆盖该键值，如果不存在就新建一个。
                 map.put(spilt[i], 1);
             } else {
                 int frequency = map.get(spilt[i]);

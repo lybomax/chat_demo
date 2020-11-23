@@ -32,7 +32,9 @@ public class RandomLogTraceIDGenerator implements IDGenerator {
 
     /**
      * 获取八位随机数
+     *
      * @param length
+     *
      * @return
      */
     private char[] genRandomChars(int length) {
@@ -49,7 +51,9 @@ public class RandomLogTraceIDGenerator implements IDGenerator {
 
     /**
      * 获取主机名最后一个字符
+     *
      * @return
+     *
      * @throws UnknownHostException
      */
     private String getLastFieldOfHostName() throws UnknownHostException {
@@ -61,8 +65,10 @@ public class RandomLogTraceIDGenerator implements IDGenerator {
 
     /**
      * 获取当前时间戳
+     *
      * @param hostName
      * @param randomChars
+     *
      * @return
      */
     private String formatId(String hostName, char[] randomChars) {

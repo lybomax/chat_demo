@@ -9,7 +9,7 @@ public class Demo18 {
     }
 }
 
-class Demo18Thread extends Thread{
+class Demo18Thread extends Thread {
     @Override
     public void run() {
         try {
@@ -19,7 +19,7 @@ class Demo18Thread extends Thread{
             System.out.println("开始线程");
             Thread.sleep(20000);
             System.out.println("结束线程");
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println("异常进入到catch代码块");
             e.printStackTrace();
         }

@@ -10,7 +10,7 @@ public class Demo15 {
     }
 }
 
-class Demo15Thread extends Thread{
+class Demo15Thread extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 10000; i++) {

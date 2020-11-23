@@ -21,61 +21,62 @@ public class Demo04 {
     }
 }
 
-class Demo04Service{
+class Demo04Service {
     private Lock lock = new ReentrantLock();
     private Condition conditionA = lock.newCondition();
     private Condition conditionB = lock.newCondition();
 
-    public void awaitA(){
-        try{
+    public void awaitA() {
+        try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "开始执行awaitA方法" + System.currentTimeMillis());
             conditionA.await();
             System.out.println(Thread.currentThread().getName() + "结束执行awaitA方法" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             lock.unlock();
         }
     }
 
-    public void awaitB(){
-        try{
+    public void awaitB() {
+        try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "开始执行awaitB方法" + System.currentTimeMillis());
             conditionB.await();
             System.out.println(Thread.currentThread().getName() + "结束执行awaitB方法" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             lock.unlock();
         }
     }
 
-    public void signalAll_A(){
-        try{
+    public void signalAll_A() {
+        try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "唤醒所有的线程在" + System.currentTimeMillis());
             conditionA.signalAll();
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
 
-    public void signalAll_B(){
-        try{
+    public void signalAll_B() {
+        try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "唤醒所有的线程在" + System.currentTimeMillis());
             conditionB.signalAll();
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
 }
 
-class Demo04ThreadA extends Thread{
+class Demo04ThreadA extends Thread {
     private Demo04Service service;
-    public Demo04ThreadA(Demo04Service service){
+
+    public Demo04ThreadA(Demo04Service service) {
         this.service = service;
     }
 
@@ -85,9 +86,10 @@ class Demo04ThreadA extends Thread{
     }
 }
 
-class Demo04ThreadB extends Thread{
+class Demo04ThreadB extends Thread {
     private Demo04Service service;
-    public Demo04ThreadB(Demo04Service service){
+
+    public Demo04ThreadB(Demo04Service service) {
         this.service = service;
     }
 

@@ -19,7 +19,7 @@ public class reverse {
         DataNode reNode2 = reverse2(chain2.getHead());
         long reverse2_cost = System.currentTimeMillis() - reverse2_start;
         printChain(reNode2);
-        System.out.println("reverse2 cost time is ["+reverse2_cost+"]ms");
+        System.out.println("reverse2 cost time is [" + reverse2_cost + "]ms");
 
 
     }

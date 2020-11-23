@@ -12,12 +12,12 @@ public class Demo07 {
     volatile private static int nextPrintWho = 1;
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(){
+        Thread t1 = new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     lock.lock();
-                    while (nextPrintWho != 1){
+                    while (nextPrintWho != 1) {
                         conditionA.await();
                     }
                     for (int i = 0; i < 3; i++) {
@@ -25,20 +25,20 @@ public class Demo07 {
                     }
                     nextPrintWho = 2;
                     conditionB.signalAll();
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally {
+                } finally {
                     lock.unlock();
                 }
 
             }
         };
-        Thread t2 = new Thread(){
+        Thread t2 = new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     lock.lock();
-                    while (nextPrintWho != 2){
+                    while (nextPrintWho != 2) {
                         conditionB.await();
                     }
                     for (int i = 0; i < 3; i++) {
@@ -46,20 +46,20 @@ public class Demo07 {
                     }
                     nextPrintWho = 3;
                     conditionC.signalAll();
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally {
+                } finally {
                     lock.unlock();
                 }
 
             }
         };
-        Thread t3 = new Thread(){
+        Thread t3 = new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     lock.lock();
-                    while (nextPrintWho != 3){
+                    while (nextPrintWho != 3) {
                         conditionC.await();
                     }
                     for (int i = 0; i < 3; i++) {
@@ -67,9 +67,9 @@ public class Demo07 {
                     }
                     nextPrintWho = 1;
                     conditionA.signalAll();
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally {
+                } finally {
                     lock.unlock();
                 }
 

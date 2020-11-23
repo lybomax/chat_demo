@@ -21,11 +21,13 @@ public class TimingThreadPool extends ThreadPoolExecutor {
                              BlockingQueue<Runnable> workQueue) {
         super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
     }
+
     protected void beforeExecute(Thread t, Runnable r) {
         super.beforeExecute(t, r);
         log.info(String.format("Thread %s: start %s", t, r));
         startTime.set(System.nanoTime());
     }
+
     protected void afterExecute(Runnable r, Throwable t) {
         try {
             long endTime = System.nanoTime();
@@ -37,6 +39,7 @@ public class TimingThreadPool extends ThreadPoolExecutor {
             super.afterExecute(r, t);
         }
     }
+
     protected void terminated() {
         try {
             log.info(String.format("Terminated: avg time=%dns", totalTime.get() / numTasks.get()));
@@ -46,7 +49,7 @@ public class TimingThreadPool extends ThreadPoolExecutor {
     }
 
     public static void main(String[] args) {
-        ThreadPoolExecutor  exec = new TimingThreadPool(0, Integer.MAX_VALUE,
+        ThreadPoolExecutor exec = new TimingThreadPool(0, Integer.MAX_VALUE,
                 60L, TimeUnit.SECONDS,
                 new SynchronousQueue<Runnable>());
         exec.execute(new DoSomething(5));
@@ -57,22 +60,19 @@ public class TimingThreadPool extends ThreadPoolExecutor {
         exec.shutdown();
     }
 
-    static class DoSomething implements Runnable{
+    static class DoSomething implements Runnable {
         private int sleepTime;
-        public DoSomething(int sleepTime)
-        {
+
+        public DoSomething(int sleepTime) {
             this.sleepTime = sleepTime;
         }
+
         @Override
-        public void run()
-        {
-            System.out.println(Thread.currentThread().getName()+" is running.");
-            try
-            {
+        public void run() {
+            System.out.println(Thread.currentThread().getName() + " is running.");
+            try {
                 TimeUnit.SECONDS.sleep(sleepTime);
-            }
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

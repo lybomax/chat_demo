@@ -10,7 +10,7 @@ public class Demo24 {
     }
 }
 
-class Demo24Thread extends Thread{
+class Demo24Thread extends Thread {
     @Override
     public void run() {
         System.out.println("线程的运行优先级是：" + this.getPriority());

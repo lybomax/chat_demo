@@ -13,16 +13,16 @@ public class FileCopy {
         copyAToB();
     }
 
-    public static void copyAToB(){
-        File fileA=new File("D:\\a.txt");
-        File fileB=new File("D:\\b.txt");
-        InputStream in=null;
-        OutputStream out=null;
+    public static void copyAToB() {
+        File fileA = new File("D:\\a.txt");
+        File fileB = new File("D:\\b.txt");
+        InputStream in = null;
+        OutputStream out = null;
         try {
-            in=new FileInputStream(fileA);
-            out=new FileOutputStream(fileB);
+            in = new FileInputStream(fileA);
+            out = new FileOutputStream(fileB);
             int i;
-            while ((i=in.read())!=-1){
+            while ((i = in.read()) != -1) {
                 out.write(i);
             }
             System.out.println("复制成功");

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @Date: 2019/12/21 15:57
  */
 public class Splitter extends Processor {
-    String process(Object input){
+    String process(Object input) {
         return Arrays.toString(((String) input).split(" "));
     }
 }

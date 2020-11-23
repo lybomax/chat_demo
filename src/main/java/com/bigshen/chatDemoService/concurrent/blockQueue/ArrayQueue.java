@@ -44,6 +44,7 @@ public final class ArrayQueue<T> {
 
     /**
      * 从队列尾写入数据
+     *
      * @param t
      */
     public void put(T t) {
@@ -76,6 +77,7 @@ public final class ArrayQueue<T> {
 
     /**
      * 从队列头获取数据
+     *
      * @return
      */
     public T get() {
@@ -108,6 +110,7 @@ public final class ArrayQueue<T> {
 
     /**
      * 获取队列大小
+     *
      * @return
      */
     private synchronized int size() {
@@ -117,6 +120,7 @@ public final class ArrayQueue<T> {
 
     /**
      * 判断队列是否为空
+     *
      * @return
      */
     public boolean isEmpty() {

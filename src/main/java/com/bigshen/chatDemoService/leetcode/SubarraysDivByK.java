@@ -19,7 +19,6 @@ import java.util.Map;
  * 1 <= A.length <= 30000
  * -10000 <= A[i] <= 10000
  * 2 <= K <= 10000
- *
  * @Author BYJ
  * @Date 2020/5/27
  * @Version V1.0
@@ -65,7 +64,7 @@ public class SubarraysDivByK {
     }
 
     public static void main(String[] args) {
-        int[] arr={4,5,0,-2,-3,1};
-        System.out.println(subarraysDivByK(arr,5));
+        int[] arr = {4, 5, 0, -2, -3, 1};
+        System.out.println(subarraysDivByK(arr, 5));
     }
 }

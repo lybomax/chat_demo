@@ -1,8 +1,7 @@
 /**
- * 
+ *
  */
 package com.bigshen.chatDemoService.ArtConcurrentBook.chapter05;
-
 
 
 import com.bigshen.chatDemoService.ArtConcurrentBook.chapter04.SleepUtils;

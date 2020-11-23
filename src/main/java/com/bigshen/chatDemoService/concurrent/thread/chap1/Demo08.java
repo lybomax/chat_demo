@@ -8,8 +8,8 @@ public class Demo08 {
     }
 }
 
-class Demo08Thread extends Thread{
-    public Demo08Thread(){
+class Demo08Thread extends Thread {
+    public Demo08Thread() {
         System.out.println("构造方法开始");
         System.out.println("构造方法：" + Thread.currentThread().getName());
         System.out.println(this.getName());

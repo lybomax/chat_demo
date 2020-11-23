@@ -10,7 +10,7 @@ public class Demo16 {
     }
 }
 
-class Demo16ThreadA extends Thread{
+class Demo16ThreadA extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
@@ -20,7 +20,8 @@ class Demo16ThreadA extends Thread{
         }
     }
 }
-class Demo16ThreadB extends Thread{
+
+class Demo16ThreadB extends Thread {
     @Override
     public void run() {
         try {
@@ -28,15 +29,17 @@ class Demo16ThreadB extends Thread{
             t.start();
             t.join();
             System.out.println("B线程正常结束");
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println("B线程异常结束");
             e.printStackTrace();
         }
     }
 }
-class Demo16ThreadC extends Thread{
+
+class Demo16ThreadC extends Thread {
     private Demo16ThreadB t;
-    public Demo16ThreadC(Demo16ThreadB t){
+
+    public Demo16ThreadC(Demo16ThreadB t) {
         this.t = t;
     }
 

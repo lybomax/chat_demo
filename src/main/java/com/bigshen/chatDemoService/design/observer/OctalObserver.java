@@ -5,16 +5,16 @@ package com.bigshen.chatDemoService.design.observer;
  * @Author: BIGSHEN
  * @Date: 2019/12/21 16:28
  */
-public class OctalObserver extends Observer{
+public class OctalObserver extends Observer {
 
-    public OctalObserver(Subject subject){
+    public OctalObserver(Subject subject) {
         this.subject = subject;
         this.subject.attach(this);
     }
 
     @Override
     public void update() {
-        System.out.println( "Octal String: "
-                + Integer.toOctalString( subject.getState() ) );
+        System.out.println("Octal String: "
+                + Integer.toOctalString(subject.getState()));
     }
 }

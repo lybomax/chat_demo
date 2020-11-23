@@ -9,7 +9,7 @@ import java.util.function.BiConsumer;
 
 /**
  * ²¢·¢put
- * 
+ *
  * @author tengfei.fangtf
  * @version $Id: Snippet.java, v 0.1 2015-7-31 ÏÂÎç11:53:55 tengfei.fangtf Exp $
  */

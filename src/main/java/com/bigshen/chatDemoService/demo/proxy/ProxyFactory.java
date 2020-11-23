@@ -18,20 +18,22 @@ import java.lang.reflect.Method;
 public class ProxyFactory implements MethodInterceptor {
 
     /**
-     维护目标对象
+     * 维护目标对象
      */
     private Object target;
-    public ProxyFactory(Object target){
-        this.target=target;
+
+    public ProxyFactory(Object target) {
+        this.target = target;
     }
 
     /**
      * 给目标对象创建代理对象
+     *
      * @return
      */
-    public Object getProxyInstance(){
+    public Object getProxyInstance() {
         //1、工具类
-        Enhancer en=new Enhancer();
+        Enhancer en = new Enhancer();
         //2、设置父类
         en.setSuperclass(target.getClass());
         //3、设置回调函数
@@ -44,12 +46,13 @@ public class ProxyFactory implements MethodInterceptor {
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
         System.out.println("开始事务.......");
-        methodProxy.invokeSuper(obj,args);
+        methodProxy.invokeSuper(obj, args);
         // 执⾏⽬标对象的⽅法
         Object returnValue = method.invoke(target, args);
         System.out.println("提交事务.......");
         return returnValue;
     }
+
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
         UserDao factory = (UserDao) new

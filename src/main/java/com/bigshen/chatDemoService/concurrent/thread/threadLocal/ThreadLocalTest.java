@@ -8,7 +8,8 @@ import java.util.Random;
  * @Date: 2019/12/22 10:56
  */
 public class ThreadLocalTest implements Runnable {
-    private ThreadLocal<Student> studentThreadLocal=new ThreadLocal<Student>();
+    private ThreadLocal<Student> studentThreadLocal = new ThreadLocal<Student>();
+
     @Override
     public void run() {
         String currentThreadName = Thread.currentThread().getName();
@@ -25,8 +26,9 @@ public class ThreadLocalTest implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println( currentThreadName + " is second get age: " + studen.getAge());
+        System.out.println(currentThreadName + " is second get age: " + studen.getAge());
     }
+
     private Student getStudent() {
         Student studen = studentThreadLocal.get();
         if (null == studen) {
@@ -35,10 +37,11 @@ public class ThreadLocalTest implements Runnable {
         }
         return studen;
     }
+
     public static void main(String[] args) {
         ThreadLocalTest t = new ThreadLocalTest();
-        Thread t1 = new Thread(t,"Thread A");
-        Thread t2 = new Thread(t,"Thread B");
+        Thread t1 = new Thread(t, "Thread A");
+        Thread t2 = new Thread(t, "Thread B");
         t1.start();
         t2.start();
     }

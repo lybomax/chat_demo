@@ -17,6 +17,7 @@ public class WeTalkUtils {
      *
      * @param channel
      * @param msg
+     *
      * @throws IOException
      */
     public static void sendMsg(SocketChannel channel, String msg) throws IOException {
@@ -30,7 +31,9 @@ public class WeTalkUtils {
      * 回复消息
      *
      * @param channel
+     *
      * @return
+     *
      * @throws IOException
      */
     public static String recvMsg(SocketChannel channel) throws IOException {

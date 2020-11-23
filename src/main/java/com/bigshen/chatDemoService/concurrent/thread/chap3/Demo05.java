@@ -17,22 +17,25 @@ public class Demo05 {
         t4.start();
     }
 }
-class Demo05Service{
-    public void foo(Object lock){
-        try{
-            synchronized (lock){
+
+class Demo05Service {
+    public void foo(Object lock) {
+        try {
+            synchronized (lock) {
                 System.out.println(Thread.currentThread().getName() + "进入了foo方法，准备执行wait方法");
                 lock.wait();
                 System.out.println(Thread.currentThread().getName() + "结束了foo方法");
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
-class Demo05ThreadA extends Thread{
+
+class Demo05ThreadA extends Thread {
     private Object lock;
-    public Demo05ThreadA(Object lock){
+
+    public Demo05ThreadA(Object lock) {
         this.lock = lock;
     }
 
@@ -42,15 +45,17 @@ class Demo05ThreadA extends Thread{
         service.foo(lock);
     }
 }
-class Demo05ThreadB extends Thread{
+
+class Demo05ThreadB extends Thread {
     private Object lock;
-    public Demo05ThreadB(Object lock){
+
+    public Demo05ThreadB(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        synchronized (lock){
+        synchronized (lock) {
             // notify仅随机唤醒一个线程
 //            lock.notify();
             // 如果要唤醒多个线程，需要多次调用notify方法

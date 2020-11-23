@@ -12,8 +12,8 @@ public class Demo21 {
     }
 }
 
-class Demo21Service{
-    public static void foo1(String lockObject){
+class Demo21Service {
+    public static void foo1(String lockObject) {
         try {
             synchronized (lockObject) {
                 while (true) {
@@ -21,11 +21,12 @@ class Demo21Service{
                     Thread.sleep(1000);
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    public static void foo2(Object lockObject){
+
+    public static void foo2(Object lockObject) {
         try {
             synchronized (lockObject) {
                 while (true) {
@@ -33,20 +34,20 @@ class Demo21Service{
                     Thread.sleep(1000);
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo21ThreadA extends Thread{
+class Demo21ThreadA extends Thread {
     @Override
     public void run() {
         Demo21Service.foo1("AA");
     }
 }
 
-class Demo21ThreadB extends Thread{
+class Demo21ThreadB extends Thread {
     @Override
     public void run() {
         Demo21Service.foo2("AA");

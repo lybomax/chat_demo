@@ -36,15 +36,16 @@ public class ArrayStack {
         // 栈为空，则直接返回null
         if (count == 0) return null;
         // 返回下标为count-1的数组元素，并且栈中元素个数count减一
-        String tmp = items[count-1];
+        String tmp = items[count - 1];
         --count;
         return tmp;
     }
+
     public static void main(String[] args) {
-        ArrayStack arrayStack=new ArrayStack(10);
-        arrayStack.items=new String[]{"aa","bb","cc","dd","ee","ff","gg"};
-        arrayStack.count=3;
-        arrayStack.n=5;
+        ArrayStack arrayStack = new ArrayStack(10);
+        arrayStack.items = new String[]{"aa", "bb", "cc", "dd", "ee", "ff", "gg"};
+        arrayStack.count = 3;
+        arrayStack.n = 5;
         arrayStack.push("vv");
     }
 }

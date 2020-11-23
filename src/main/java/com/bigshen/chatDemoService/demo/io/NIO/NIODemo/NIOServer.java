@@ -68,8 +68,11 @@ public class NIOServer {
 
     /**
      * 根据通道读取数据
+     *
      * @param sChannel 指定通道
+     *
      * @return
+     *
      * @throws IOException
      */
     private static String readDataFromSocketChannel(SocketChannel sChannel) throws IOException {

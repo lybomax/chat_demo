@@ -12,15 +12,15 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Version V1.0
  **/
 public class Counter {
-    private AtomicInteger atomicInteger=new AtomicInteger(0);
-    private int i=0;
+    private AtomicInteger atomicInteger = new AtomicInteger(0);
+    private int i = 0;
 
     public static void main(String[] args) {
-        final Counter cas=new Counter();
-        List<Thread> ts=new ArrayList<>(6000);
-        long start =System.currentTimeMillis();
+        final Counter cas = new Counter();
+        List<Thread> ts = new ArrayList<>(6000);
+        long start = System.currentTimeMillis();
         for (int i = 0; i < 100; i++) {
-            Thread t=new Thread(()->{
+            Thread t = new Thread(() -> {
                 for (int j = 0; j < 10000; j++) {
                     cas.count();
                     cas.safeCount();
@@ -40,18 +40,20 @@ public class Counter {
         }
         System.out.println(cas.i);
         System.out.println(cas.atomicInteger);
-        System.out.println(System.currentTimeMillis()-start);
+        System.out.println(System.currentTimeMillis() - start);
     }
-    private void safeCount(){
-        for (;;){
-            int i=atomicInteger.get();
-            boolean suc=atomicInteger.compareAndSet(i,++i);
-            if (suc){
+
+    private void safeCount() {
+        for (; ; ) {
+            int i = atomicInteger.get();
+            boolean suc = atomicInteger.compareAndSet(i, ++i);
+            if (suc) {
                 break;
             }
         }
     }
-    private void count(){
+
+    private void count() {
         i++;
     }
 

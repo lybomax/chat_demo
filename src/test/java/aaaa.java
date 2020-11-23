@@ -12,9 +12,9 @@ import java.util.Set;
  **/
 public class aaaa {
     public static void main(String[] args) {
-        Map<String,String> a = new HashMap<String,String>();
-        a.put("a","1");
-        a.put("b","2");
+        Map<String, String> a = new HashMap<String, String>();
+        a.put("a", "1");
+        a.put("b", "2");
         String value = a.get("a");
         System.out.println(value);
         Set<Map.Entry<String, String>> entries = a.entrySet();
@@ -31,11 +31,12 @@ public class aaaa {
 
 
     }
-    private String[] getLineResult (String a){
+
+    private String[] getLineResult(String a) {
 
         String substring = a.substring(0, 20);
         String substring1 = a.substring(50, 61);
-        String[] strings = {substring,substring1};
-        return  strings;
+        String[] strings = {substring, substring1};
+        return strings;
     }
 }

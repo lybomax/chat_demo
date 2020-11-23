@@ -10,10 +10,10 @@ public class Demo01 {
     }
 }
 
-class Demo01Service{
-    public void add(String username){
+class Demo01Service {
+    public void add(String username) {
         int num = 0;
-        if ("a".equals(username)){
+        if ("a".equals(username)) {
             num = 100;
             System.out.println("a set over");
             // 等待另外一个线程修改num的值
@@ -22,7 +22,7 @@ class Demo01Service{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             num = 200;
             System.out.println("b set over");
         }
@@ -30,9 +30,10 @@ class Demo01Service{
     }
 }
 
-class Demo01ThreadA extends Thread{
+class Demo01ThreadA extends Thread {
     private Demo01Service service;
-    public Demo01ThreadA(Demo01Service service){
+
+    public Demo01ThreadA(Demo01Service service) {
         this.service = service;
     }
 
@@ -41,9 +42,11 @@ class Demo01ThreadA extends Thread{
         service.add("a");
     }
 }
-class Demo01ThreadB extends Thread{
+
+class Demo01ThreadB extends Thread {
     private Demo01Service service;
-    public Demo01ThreadB(Demo01Service service){
+
+    public Demo01ThreadB(Demo01Service service) {
         this.service = service;
     }
 

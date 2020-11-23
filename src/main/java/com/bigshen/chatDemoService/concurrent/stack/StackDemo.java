@@ -15,7 +15,7 @@ public class StackDemo {
         System.out.println("stack: " + st);
     }
 
-    private static  void showpop(Stack<Integer> st) {
+    private static void showpop(Stack<Integer> st) {
         System.out.print("pop -> ");
         Integer a = (Integer) st.pop();
         System.out.println(a);

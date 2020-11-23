@@ -26,8 +26,9 @@ public class CountDownLatchTest {
             System.out.println("所有人都已经到齐了，开会吧...");
         }
     }
+
     /**
-     员工到达会议室
+     * 员工到达会议室
      */
     static class EmpleoyeeThread extends Thread {
         @Override

@@ -9,7 +9,7 @@ public class Demo17 {
     }
 }
 
-class Demo17Thread extends Thread{
+class Demo17Thread extends Thread {
     @Override
     public void run() {
         try {
@@ -22,7 +22,7 @@ class Demo17Thread extends Thread{
                 System.out.println("i=" + i);
             }
             System.out.println("这里是结束循环后的代码");
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

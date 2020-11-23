@@ -21,20 +21,20 @@ public class Demo19 {
     }
 }
 
-class Demo19Thread extends Thread{
+class Demo19Thread extends Thread {
     private long i = 0;
 
-    public long getI(){
+    public long getI() {
         return i;
     }
 
-    public void setI(long i){
+    public void setI(long i) {
         this.i = i;
     }
 
     @Override
     public void run() {
-        while (true){
+        while (true) {
             i++;
         }
     }

@@ -11,17 +11,17 @@ public class Demo26 {
     }
 }
 
-class Demo26Service extends Thread{
+class Demo26Service extends Thread {
     // 标志，控制循环
     volatile public boolean flag = true;
 
-    public void run(){
+    public void run() {
         foo();
     }
 
-    public void foo(){
+    public void foo() {
         System.out.println("foo开始运行");
-        while(flag) {
+        while (flag) {
 
         }
         System.out.println("foo运行结束");

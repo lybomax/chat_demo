@@ -11,12 +11,12 @@ public class Demo06 {
     }
 }
 
-class Demo06Thread extends Thread{
+class Demo06Thread extends Thread {
     private int count = 5;
 
     @Override
     public void run() {
-        while(count > 0) {
+        while (count > 0) {
             count--;
             System.out.println(Thread.currentThread().getName() + ": count=" + count);
         }

@@ -15,20 +15,21 @@ public class Demo04 {
     }
 }
 
-class Demo04Service{
-    synchronized static public void foo(){
+class Demo04Service {
+    synchronized static public void foo() {
         try {
             System.out.println(Thread.currentThread().getName() + "调用了foo方法");
             Thread.sleep(100000);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo04Thread extends Thread{
+class Demo04Thread extends Thread {
     private Demo04Service service;
-    public Demo04Thread(Demo04Service service){
+
+    public Demo04Thread(Demo04Service service) {
         this.service = service;
     }
 

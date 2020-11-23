@@ -1,8 +1,7 @@
 package com.bigshen.chatDemoService.design.observer;
 
 /**
- * @Description:观察者模式demo
- * 适用于一对多关系中
+ * @Description:观察者模式demo 适用于一对多关系中
  * 一个对象修改通知其他对象一并修改
  * @Author: BIGSHEN
  * @Date: 2019/12/21 16:30

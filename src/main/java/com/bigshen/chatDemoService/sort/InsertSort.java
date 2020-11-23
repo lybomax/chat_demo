@@ -20,6 +20,7 @@ public class InsertSort {
             a[j] = tmp;
         }
     }
+
     public static void insertionSort(int[] array) {//12,32,4,23,2,45
         int current;
         for (int i = 0; i < array.length - 1; i++) {
@@ -35,7 +36,7 @@ public class InsertSort {
 
 
     /**
-     插入排序，a表示数组，n表示数组大小
+     * 插入排序，a表示数组，n表示数组大小
      */
     public static void insertionSort(Integer[] a, int n) {
         if (n <= 1) return;
@@ -47,26 +48,27 @@ public class InsertSort {
             for (; j >= 0; --j) {
                 if (a[j] > value) {
                     // 数据移动
-                    a[j+1] = a[j];
+                    a[j + 1] = a[j];
                 } else {
                     break;
                 }
             }
             // 插入数据
-            a[j+1] = value;
+            a[j + 1] = value;
         }
     }
+
     public static void main(String[] args) {
         Integer[] arr = new Integer[8];
         for (int i = 0; i < 8; i++) {
-            System.out.println("请输入第" + (i+1) + "个数");
-            Scanner scanner=new Scanner(System.in);
-            arr[i]= scanner.nextInt();
+            System.out.println("请输入第" + (i + 1) + "个数");
+            Scanner scanner = new Scanner(System.in);
+            arr[i] = scanner.nextInt();
         }
-        System.out.println("排序前"+ Arrays.toString(arr));
+        System.out.println("排序前" + Arrays.toString(arr));
         //insertSort(arr);
-        insertionSort(arr,8);
-        System.out.println("排序后"+ Arrays.toString(arr));
+        insertionSort(arr, 8);
+        System.out.println("排序后" + Arrays.toString(arr));
     }
 
 }

@@ -10,9 +10,11 @@ public class Demo22 {
     }
 }
 
-class Demo22Service{
+class Demo22Service {
     private Object lockObject1 = new Object();
-    /*synchronized */public void foo1(){
+
+    /*synchronized */
+    public void foo1() {
         synchronized (lockObject1) {
             System.out.println("foo1方法开始执行");
             boolean isContinue = true;
@@ -22,8 +24,11 @@ class Demo22Service{
             System.out.println("foo2方法执行结束");
         }
     }
+
     private Object lockObject2 = new Object();
-    /*synchronized */public void foo2(){
+
+    /*synchronized */
+    public void foo2() {
         synchronized (lockObject2) {
             System.out.println("foo2方法开始执行");
             System.out.println("foo2方法执行结束");
@@ -31,9 +36,10 @@ class Demo22Service{
     }
 }
 
-class Demo22ThreadA extends Thread{
+class Demo22ThreadA extends Thread {
     private Demo22Service service;
-    public Demo22ThreadA(Demo22Service service){
+
+    public Demo22ThreadA(Demo22Service service) {
         this.service = service;
     }
 
@@ -43,9 +49,10 @@ class Demo22ThreadA extends Thread{
     }
 }
 
-class Demo22ThreadB extends Thread{
+class Demo22ThreadB extends Thread {
     private Demo22Service service;
-    public Demo22ThreadB(Demo22Service service){
+
+    public Demo22ThreadB(Demo22Service service) {
         this.service = service;
     }
 

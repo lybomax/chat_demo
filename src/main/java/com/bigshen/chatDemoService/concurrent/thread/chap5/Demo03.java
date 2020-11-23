@@ -10,20 +10,20 @@ public class Demo03 {
     }
 }
 
-class Demo03Thread extends Thread{
+class Demo03Thread extends Thread {
     private Object lock;
 
-    public Demo03Thread(Object lock){
+    public Demo03Thread(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
         try {
-            synchronized (lock){
+            synchronized (lock) {
                 lock.wait();
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

@@ -12,26 +12,28 @@ public class Demo07 {
 }
 
 class Demo07Service {
-    synchronized public void foo(){
-        if ("A".equals(Thread.currentThread().getName())){
+    synchronized public void foo() {
+        if ("A".equals(Thread.currentThread().getName())) {
             System.out.println("线程A开始于" + System.currentTimeMillis());
-            while(true){
-                if(("" + Math.random()).substring(0, 8).equals("0.123456")){
+            while (true) {
+                if (("" + Math.random()).substring(0, 8).equals("0.123456")) {
                     System.out.println("线程A结束于" + System.currentTimeMillis());
                     Integer.parseInt("A");
                 }
             }
-        }else{
+        } else {
             System.out.println("线程B开始于" + System.currentTimeMillis());
         }
     }
 }
 
-class Demo07Thread extends Thread{
+class Demo07Thread extends Thread {
     private Demo07Service service;
-    public Demo07Thread(Demo07Service service){
+
+    public Demo07Thread(Demo07Service service) {
         this.service = service;
     }
+
     @Override
     public void run() {
         service.foo();

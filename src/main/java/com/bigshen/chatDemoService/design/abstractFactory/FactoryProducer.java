@@ -6,10 +6,10 @@ package com.bigshen.chatDemoService.design.abstractFactory;
  * @Date: 2019/12/3 14:35
  */
 class FactoryProducer {
-    static AbstractFactory getFactory(String choice){
-        if("SHAPE".equalsIgnoreCase(choice)){
+    static AbstractFactory getFactory(String choice) {
+        if ("SHAPE".equalsIgnoreCase(choice)) {
             return new ShapeFactory();
-        } else if("COLOR".equalsIgnoreCase(choice)){
+        } else if ("COLOR".equalsIgnoreCase(choice)) {
             return new ColorFactory();
         }
         return null;

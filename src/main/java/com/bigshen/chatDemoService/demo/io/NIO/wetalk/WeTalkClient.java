@@ -20,15 +20,15 @@ public class WeTalkClient {
 
     private int port;
 
-    public WeTalkClient(String hostname,int port){
-        this.hostname=hostname;
-        this.port=port;
+    public WeTalkClient(String hostname, int port) {
+        this.hostname = hostname;
+        this.port = port;
     }
 
     private void start() throws IOException {
         //打开一个套接字通道，并向服务端发起连接
         SocketChannel channel = SocketChannel.open();
-        channel.connect(new InetSocketAddress(hostname,port));
+        channel.connect(new InetSocketAddress(hostname, port));
         Scanner sc = new Scanner(System.in);
         while (true) {
             // 输入信息
@@ -53,6 +53,6 @@ public class WeTalkClient {
     }
 
     public static void main(String[] args) throws IOException {
-        new WeTalkClient("localhost",8080).start();
+        new WeTalkClient("localhost", 8080).start();
     }
 }

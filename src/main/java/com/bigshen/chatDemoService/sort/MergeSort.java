@@ -17,7 +17,9 @@ public class MergeSort {
 
     /**
      * 归并算法
+     *
      * @param array
+     *
      * @return
      */
     private static int[] mergeSort(int[] array) {
@@ -32,8 +34,10 @@ public class MergeSort {
 
     /**
      * 进行归并
-     * @param left 左集合
+     *
+     * @param left  左集合
      * @param right 右集合
+     *
      * @return
      */
     private static int[] merge(int[] left, int[] right) {

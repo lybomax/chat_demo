@@ -9,7 +9,7 @@ public class Demo05 {
     }
 }
 
-class Demo05Thread implements Runnable{
+class Demo05Thread implements Runnable {
     @Override
     public void run() {
         System.out.println("运行了run方法");

@@ -20,15 +20,15 @@ import static junit.framework.TestCase.assertNotNull;
 public class PersonConverterTest {
     @Test
     public void test() {
-        Person person = new Person(1L,"zhige","zhige.me@gmail.com",new Date(),new User(1));
+        Person person = new Person(1L, "zhige", "zhige.me@gmail.com", new Date(), new User(1));
         PersonDTO personDTO = PersonConverter.INSTANCE.domain2dto(person);
         assertNotNull(personDTO);
         assertEquals(personDTO.getId(), person.getId());
         assertEquals(personDTO.getName(), person.getName());
         assertEquals(personDTO.getBirth(), person.getBirthday());
         String format = DateFormatUtils.format(personDTO.getBirth(), "yyyy-MM-dd HH:mm:ss");
-        assertEquals(personDTO.getBirthDateFormat(),format);
-        assertEquals(personDTO.getBirthExpressionFormat(),format);
+        assertEquals(personDTO.getBirthDateFormat(), format);
+        assertEquals(personDTO.getBirthExpressionFormat(), format);
 
         List<Person> people = new ArrayList<>();
         people.add(person);

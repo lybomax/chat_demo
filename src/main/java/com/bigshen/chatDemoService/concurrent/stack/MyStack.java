@@ -3,8 +3,7 @@ package com.bigshen.chatDemoService.concurrent.stack;
 import java.util.Arrays;
 
 /**
- * @Description:自己实现一个栈，要求这个栈具有push()、pop()（返回栈顶元素并出栈）、peek()
- * （返回栈顶元素不出栈）、isEmpty()、size()这些基本的方法。
+ * @Description:自己实现一个栈，要求这个栈具有push()、pop()（返回栈顶元素并出栈）、peek() （返回栈顶元素不出栈）、isEmpty()、size()这些基本的方法。
  *
  * 提示：每次入栈之前先判断栈的容量是否够用，如果不够用就用Arrays.copyOf()进行扩容；
  * @Author: BIGSHEN
@@ -19,7 +18,7 @@ public class MyStack {
     //TODO：不带初始容量的构造方法。默认容量为8
     public MyStack() {
         this.capacity = 8;
-        this.storage=new int[8];
+        this.storage = new int[8];
         this.count = 0;
     }
 
@@ -34,36 +33,37 @@ public class MyStack {
     }
 
     //TODO：入栈
-    public void push(int value){
-        if (count==capacity){
+    public void push(int value) {
+        if (count == capacity) {
             ensureCapacity();
         }
-        storage[count++]=value;
+        storage[count++] = value;
     }
 
     //TODO：确保容量大小
     private void ensureCapacity() {
         //扩容
-        int newCapacity=capacity * GROW_FACTOR;
+        int newCapacity = capacity * GROW_FACTOR;
         //复制
-        storage= Arrays.copyOf(storage,newCapacity);
-        capacity=newCapacity;
+        storage = Arrays.copyOf(storage, newCapacity);
+        capacity = newCapacity;
     }
 
     //TODO：返回栈顶元素并出栈
     private int pop() {
         count--;
-        if (count==-1){
+        if (count == -1) {
             throw new IllegalArgumentException("Stack is empty.");
         }
         return storage[count];
     }
+
     //TODO:返回栈顶元素不出栈
-    private int peek(){
-        if (count==0){
-        throw new IllegalArgumentException("Stack is empty.");
-        }else {
-            return storage[count-1];
+    private int peek() {
+        if (count == 0) {
+            throw new IllegalArgumentException("Stack is empty.");
+        } else {
+            return storage[count - 1];
         }
     }
 

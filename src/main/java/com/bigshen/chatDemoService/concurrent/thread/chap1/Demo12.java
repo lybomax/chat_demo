@@ -9,7 +9,7 @@ public class Demo12 {
     }
 }
 
-class Demo12Thread extends Thread{
+class Demo12Thread extends Thread {
     private boolean flag = true;
 
     @Override
@@ -20,12 +20,12 @@ class Demo12Thread extends Thread{
                 Thread.sleep(1000);
             }
             System.out.println("线程执行结束");
-        }catch(InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void stopThread(){
+    public void stopThread() {
         flag = false;
     }
 }

@@ -3,7 +3,7 @@ package com.bigshen.chatDemoService.concurrent.thread.chap1;
 public class Demo20 {
     public static void main(String[] args) throws InterruptedException {
         Demo20Service service = new Demo20Service();
-        Thread t1 = new Thread(){
+        Thread t1 = new Thread() {
             @Override
             public void run() {
                 service.printString();
@@ -13,7 +13,7 @@ public class Demo20 {
         t1.start();
         Thread.sleep(10);
 
-        Thread t2 = new Thread(){
+        Thread t2 = new Thread() {
             @Override
             public void run() {
                 service.printString();
@@ -24,9 +24,9 @@ public class Demo20 {
 }
 
 class Demo20Service {
-    synchronized public void printString(){
+    synchronized public void printString() {
         System.out.println("线程开始");
-        if ("A".equals(Thread.currentThread().getName())){
+        if ("A".equals(Thread.currentThread().getName())) {
             System.out.println("A线程永远suspend了");
             Thread.currentThread().suspend();
         }

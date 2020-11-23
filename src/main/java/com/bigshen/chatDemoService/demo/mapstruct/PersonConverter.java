@@ -17,6 +17,7 @@ import java.util.List;
 @Mapper
 public interface PersonConverter {
     PersonConverter INSTANCE = Mappers.getMapper(PersonConverter.class);
+
     @Mappings({
             @Mapping(source = "birthday", target = "birth"),
             @Mapping(source = "birthday", target = "birthDateFormat", dateFormat = "yyyy-MM-dd HH:mm:ss"),

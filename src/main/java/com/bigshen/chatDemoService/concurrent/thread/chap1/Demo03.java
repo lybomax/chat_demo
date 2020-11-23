@@ -9,13 +9,13 @@ public class Demo03 {
                 System.out.println("运行main方法");
                 Thread.sleep(100);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo03Thread extends Thread{
+class Demo03Thread extends Thread {
     @Override
     public void run() {
         try {
@@ -23,7 +23,7 @@ class Demo03Thread extends Thread{
                 System.out.println("运行run方法");
                 Thread.sleep(100);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

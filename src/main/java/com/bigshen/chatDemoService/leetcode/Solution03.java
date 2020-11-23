@@ -13,9 +13,9 @@ public class Solution03 {
          无法得到上一轮的翻转结果 ret
          **/
         int ret = 0;
-        while(x != 0) {
-            int temp = ret*10 + x%10;
-            if(temp / 10 != ret){
+        while (x != 0) {
+            int temp = ret * 10 + x % 10;
+            if (temp / 10 != ret) {
                 return 0;
             }
             ret = temp;

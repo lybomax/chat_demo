@@ -9,14 +9,14 @@ public class Demo02 {
     }
 }
 
-class Demo02Thread extends Thread{
+class Demo02Thread extends Thread {
     @Override
     public void run() {
         try {
             System.out.println("线程准备进入sleep状态");
             Thread.sleep(10000);
             System.out.println("线程结束sleep状态");
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

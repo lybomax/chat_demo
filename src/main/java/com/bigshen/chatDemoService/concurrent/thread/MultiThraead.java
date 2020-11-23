@@ -13,7 +13,7 @@ import java.lang.management.ThreadMXBean;
  **/
 public class MultiThraead {
     public static void main(String[] args) {
-        ThreadMXBean threadMXBean= ManagementFactory.getThreadMXBean();
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
         for (ThreadInfo threadInfo : threadInfos) {
             /**
@@ -24,7 +24,7 @@ public class MultiThraead {
              * [2]Reference Handler 清除的线程
              * [1]main  main线程，用户程序入口
              */
-            System.out.println("["+threadInfo.getThreadId()+"]"+threadInfo.getThreadName());
+            System.out.println("[" + threadInfo.getThreadId() + "]" + threadInfo.getThreadName());
         }
     }
 }

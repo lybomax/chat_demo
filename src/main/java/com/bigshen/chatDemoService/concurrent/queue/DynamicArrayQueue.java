@@ -27,7 +27,7 @@ public class DynamicArrayQueue {
             if (head == 0) return false;
             // 数据搬移
             for (int i = head; i < tail; ++i) {
-                items[i-head] = items[i];
+                items[i - head] = items[i];
             }
             // 搬移完之后重新更新head和tail
             tail -= head;

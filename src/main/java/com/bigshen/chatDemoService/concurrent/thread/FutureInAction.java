@@ -9,8 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * @Date: 2019/12/11 21:08
  */
 public class FutureInAction {
-    public static void main(String[] args){
-        Future<String> future = invoke(()->{
+    public static void main(String[] args) {
+        Future<String> future = invoke(() -> {
             try {
                 Thread.sleep(10000L); // 设定方法执行十秒钟，十秒钟过后才返回结果
                 return "I am finished";
@@ -24,7 +24,7 @@ public class FutureInAction {
 
         // 如果方法还没有执行完，则等待10秒钟
         // 因为我们设定了方法执行时间为10秒，所以这里等待10秒，肯定能拿到结果
-        while(!future.isDown()){
+        while (!future.isDown()) {
             try {
                 Thread.sleep(10000L);
             } catch (InterruptedException e) {
@@ -36,15 +36,17 @@ public class FutureInAction {
 
     /**
      * 调用方法
+     *
      * @param callable
      * @param <T>
+     *
      * @return
      */
-    private static <T> Future<T> invoke(Callable<T> callable){
+    private static <T> Future<T> invoke(Callable<T> callable) {
         AtomicReference<T> result = new AtomicReference<>();
         AtomicBoolean finished = new AtomicBoolean(false);
 
-        Thread t = new Thread(()->{
+        Thread t = new Thread(() -> {
             T value = callable.action();
             result.set(value);
             finished.set(true);
@@ -66,12 +68,13 @@ public class FutureInAction {
         return future;
     }
 
-    private interface Future<T>{
+    private interface Future<T> {
         T get();
+
         boolean isDown();
     }
 
-    private interface Callable<T>{
+    private interface Callable<T> {
         T action();
     }
 }

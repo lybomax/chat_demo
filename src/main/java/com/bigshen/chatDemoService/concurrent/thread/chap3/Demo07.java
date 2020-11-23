@@ -19,47 +19,47 @@ public class Demo07 {
     }
 }
 
-class Demo07Object{
+class Demo07Object {
     boolean canRun = true;
 }
 
-class Demo07ThreadA extends Thread{
+class Demo07ThreadA extends Thread {
     private Object lock;
     private Demo07Object canRun;
 
-    public Demo07ThreadA(Object lock, Demo07Object canRun){
+    public Demo07ThreadA(Object lock, Demo07Object canRun) {
         this.lock = lock;
         this.canRun = canRun;
     }
 
     @Override
     public void run() {
-        try{
-            synchronized (lock){
-                while(canRun.canRun) {
+        try {
+            synchronized (lock) {
+                while (canRun.canRun) {
                     System.out.println("准备进入等待状态");
                     lock.wait();
                     System.out.println("结束等待状态");
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo07ThreadB extends Thread{
+class Demo07ThreadB extends Thread {
     private Object lock;
     private Demo07Object canRun;
 
-    public Demo07ThreadB(Object lock, Demo07Object canRun){
+    public Demo07ThreadB(Object lock, Demo07Object canRun) {
         this.lock = lock;
         this.canRun = canRun;
     }
 
     @Override
     public void run() {
-        synchronized (lock){
+        synchronized (lock) {
             System.out.println("准备执行唤醒方法");
             lock.notify();
             System.out.println("结束唤醒方法");

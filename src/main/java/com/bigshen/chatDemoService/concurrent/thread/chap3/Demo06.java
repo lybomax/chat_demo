@@ -13,35 +13,37 @@ public class Demo06 {
     }
 }
 
-class Demo06ThreadA extends Thread{
+class Demo06ThreadA extends Thread {
     private Object lock;
-    public Demo06ThreadA(Object lock){
+
+    public Demo06ThreadA(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        try{
-            synchronized (lock){
+        try {
+            synchronized (lock) {
                 System.out.println(Thread.currentThread().getName() + "进入同步代码块于" + System.currentTimeMillis());
                 lock.wait(3000);
                 System.out.println(Thread.currentThread().getName() + "结束同步代码块于" + System.currentTimeMillis());
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo06ThreadB extends Thread{
+class Demo06ThreadB extends Thread {
     private Object lock;
-    public Demo06ThreadB(Object lock){
+
+    public Demo06ThreadB(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        synchronized (lock){
+        synchronized (lock) {
             System.out.println("开始唤醒线程在" + System.currentTimeMillis());
             lock.notify();
             System.out.println("结束唤醒线程在" + System.currentTimeMillis());

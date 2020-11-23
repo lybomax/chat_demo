@@ -3,7 +3,7 @@ package com.bigshen.chatDemoService.concurrent.Volatile;
 import javax.sound.midi.Soundbank;
 
 class VolatileExample {
-    int              a    = 0;
+    int a = 0;
     volatile boolean flag = false;
 
     public void writer() {
@@ -20,7 +20,7 @@ class VolatileExample {
     }
 
     public static void main(String[] args) {
-        VolatileExample volatileExample=new VolatileExample();
+        VolatileExample volatileExample = new VolatileExample();
         volatileExample.writer();
         volatileExample.reader();
         System.out.println(volatileExample.a);

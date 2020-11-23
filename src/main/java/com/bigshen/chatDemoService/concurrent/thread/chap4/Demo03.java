@@ -18,27 +18,30 @@ class Demo03Service {
     private Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
 
-    public void await(){
+    public void await() {
         try {
             lock.lock();
             System.out.println("await方法开始于" + System.currentTimeMillis());
             condition.await();  // 需要在同步代码中调用，否则会抛出IllegalMonitorStateException
             System.out.println("await方法结束于" + System.currentTimeMillis());
             lock.unlock();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    public void signal(){
+
+    public void signal() {
         lock.lock();
         System.out.println("signal方法开始于" + System.currentTimeMillis());
         condition.signal();
         lock.unlock();
     }
 }
-class Demo03Thread extends Thread{
+
+class Demo03Thread extends Thread {
     private Demo03Service service;
-    public Demo03Thread(Demo03Service service){
+
+    public Demo03Thread(Demo03Service service) {
         this.service = service;
     }
 

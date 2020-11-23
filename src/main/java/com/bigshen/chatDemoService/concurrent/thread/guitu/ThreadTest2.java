@@ -10,10 +10,10 @@ public class ThreadTest2 implements Runnable {
     @Override
     public void run() {
         try {
-            for(int j = 1;j<=100;j=j+10){
-                System.out.println("兔子跑了"+j+"米");
+            for (int j = 1; j <= 100; j = j + 10) {
+                System.out.println("兔子跑了" + j + "米");
                 Thread.sleep(1000);
-                if(j==51){
+                if (j == 51) {
                     Thread.sleep(1500);
                 }
             }

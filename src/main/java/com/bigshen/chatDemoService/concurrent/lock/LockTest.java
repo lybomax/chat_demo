@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockTest {
     public static void main(String[] args) {
-       final Ticket t = new Ticket();
+        final Ticket t = new Ticket();
         for (int i = 0; i < 3; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 10; j++) {

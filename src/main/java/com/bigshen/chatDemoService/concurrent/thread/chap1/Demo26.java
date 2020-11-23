@@ -10,7 +10,7 @@ public class Demo26 {
     }
 }
 
-class Demo26Thread extends Thread{
+class Demo26Thread extends Thread {
     @Override
     public void run() {
         try {
@@ -18,7 +18,7 @@ class Demo26Thread extends Thread{
                 System.out.println("time=" + System.currentTimeMillis());
                 Thread.sleep(1000);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

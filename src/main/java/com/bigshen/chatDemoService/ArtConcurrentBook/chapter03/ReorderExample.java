@@ -1,7 +1,7 @@
 package com.bigshen.chatDemoService.ArtConcurrentBook.chapter03;
 
 class ReorderExample {
-    int     a    = 0;
+    int a = 0;
     boolean flag = false;
 
     public void writer() {

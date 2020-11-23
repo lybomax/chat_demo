@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
  */
 public class RegExpTest {
     public static void main(String[] args) {
-        String string="北京市朝阳区西城区)(海淀区)";
-        Pattern pattern=Pattern.compile(".*?(?=\\()");
+        String string = "北京市朝阳区西城区)(海淀区)";
+        Pattern pattern = Pattern.compile(".*?(?=\\()");
         Matcher matcher = pattern.matcher(string);
-        if (matcher.find()){
+        if (matcher.find()) {
             System.out.println(matcher.group());
         }
     }

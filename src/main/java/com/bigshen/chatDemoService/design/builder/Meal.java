@@ -11,11 +11,11 @@ import java.util.List;
 class Meal {
     private List<Item> items = new ArrayList<Item>();
 
-    void addItem(Item item){
+    void addItem(Item item) {
         items.add(item);
     }
 
-    float getCost(){
+    float getCost() {
         float cost = 0.0f;
         for (Item item : items) {
             cost += item.price();
@@ -23,11 +23,11 @@ class Meal {
         return cost;
     }
 
-    void showItems(){
+    void showItems() {
         for (Item item : items) {
-            System.out.print("Item : "+item.name());
-            System.out.print(", Packing : "+item.packing().pack());
-            System.out.println(", Price : "+item.price());
+            System.out.print("Item : " + item.name());
+            System.out.print(", Packing : " + item.packing().pack());
+            System.out.println(", Price : " + item.price());
         }
     }
 }

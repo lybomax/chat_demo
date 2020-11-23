@@ -8,7 +8,9 @@ package com.bigshen.chatDemoService.design.factory;
 class ShapeFactory {
     /**
      * 使用 getShape 方法获取形状类型的对象
+     *
      * @param shapeType
+     *
      * @return
      */
     Shape getShape(String shapeType) {

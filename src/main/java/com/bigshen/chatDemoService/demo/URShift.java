@@ -8,9 +8,9 @@ package com.bigshen.chatDemoService.demo;
 public class URShift {
 
     public static void main(String[] args) {
-        int i=-1;
+        int i = -1;
         System.out.println(Integer.toBinaryString(i));
-        i>>>=10;
+        i >>>= 10;
         System.out.println(Integer.toBinaryString(i));
     }
 }

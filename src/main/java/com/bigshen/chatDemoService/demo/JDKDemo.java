@@ -30,12 +30,12 @@ public class JDKDemo {
             httpURLConnection.setInstanceFollowRedirects(false);
             httpURLConnection.connect();
 
-            BufferedReader bufferedReader=new BufferedReader
+            BufferedReader bufferedReader = new BufferedReader
                     (new InputStreamReader(httpURLConnection.getInputStream(), StandardCharsets.UTF_8));
-            String ss,total="";
-            while ((ss=bufferedReader.readLine())!=null){
-                total+=ss;
-                total+="\n";
+            String ss, total = "";
+            while ((ss = bufferedReader.readLine()) != null) {
+                total += ss;
+                total += "\n";
             }
             String[] split = total.split(";");
             for (String s : split) {

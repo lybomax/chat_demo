@@ -5,18 +5,18 @@ package com.bigshen.chatDemoService.design.proxy;
  * @Author: byj
  * @Date: 2019/12/4 14:41
  */
-public class ProxyImage implements Image{
+public class ProxyImage implements Image {
 
     private RealImage realImage;
     private String fileName;
 
-    ProxyImage(String fileName){
+    ProxyImage(String fileName) {
         this.fileName = fileName;
     }
 
     @Override
     public void display() {
-        if(realImage == null){
+        if (realImage == null) {
             realImage = new RealImage(fileName);
         }
         realImage.display();

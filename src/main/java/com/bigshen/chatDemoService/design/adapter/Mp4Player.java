@@ -5,7 +5,7 @@ package com.bigshen.chatDemoService.design.adapter;
  * @Author: byj
  * @Date: 2019/12/3 16:07
  */
-public class Mp4Player implements AdvancedMediaPlayer{
+public class Mp4Player implements AdvancedMediaPlayer {
 
     @Override
     public void playVlc(String fileName) {
@@ -14,6 +14,6 @@ public class Mp4Player implements AdvancedMediaPlayer{
 
     @Override
     public void playMp4(String fileName) {
-        System.out.println("Playing mp4 file. Name: "+ fileName);
+        System.out.println("Playing mp4 file. Name: " + fileName);
     }
 }

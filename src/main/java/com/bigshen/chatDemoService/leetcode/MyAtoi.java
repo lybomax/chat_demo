@@ -30,7 +30,7 @@ package com.bigshen.chatDemoService.leetcode;
  * 输入: "words and 987"
  * 输出: 0
  * 解释: 第一个非空字符是 'w', 但它不是数字或正、负号。
- *      因此无法执行有效的转换。
+ * 因此无法执行有效的转换。
  * 示例 5:
  *
  * 输入: "-91283472332"
@@ -72,12 +72,12 @@ public class MyAtoi {
             if (ans > (Integer.MAX_VALUE - digit) / 10) {
                 // 本来应该是 ans * 10 + digit > Integer.MAX_VALUE
                 // 但是 *10 和 + digit 都有可能越界，所有都移动到右边去就可以了。
-                return negative? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }
             ans = ans * 10 + digit;
             idx++;
         }
-        return negative? -ans : ans;
+        return negative ? -ans : ans;
     }
 
     public static void main(String[] args) {

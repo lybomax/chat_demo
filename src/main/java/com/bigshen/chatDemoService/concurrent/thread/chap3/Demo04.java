@@ -10,24 +10,25 @@ public class Demo04 {
     }
 }
 
-class Demo04Service{
-    public void foo(Object lock){
-        try{
-            synchronized (lock){
+class Demo04Service {
+    public void foo(Object lock) {
+        try {
+            synchronized (lock) {
                 System.out.println("准备开始等待");
                 lock.wait();
                 System.out.println("结束等待");
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             System.out.println("出现异常，因为wait状态的线程被interrupt了");
             e.printStackTrace();
         }
     }
 }
 
-class Demo04Thread extends Thread{
+class Demo04Thread extends Thread {
     private Object lock;
-    public Demo04Thread(Object lock){
+
+    public Demo04Thread(Object lock) {
         this.lock = lock;
     }
 

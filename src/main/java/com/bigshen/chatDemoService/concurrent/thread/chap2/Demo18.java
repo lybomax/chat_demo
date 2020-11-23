@@ -12,8 +12,8 @@ public class Demo18 {
     }
 }
 
-class Demo18Service{
-    synchronized public static void foo1(){
+class Demo18Service {
+    synchronized public static void foo1() {
         System.out.println(Thread.currentThread().getName() + "进入方法foo1在" + System.currentTimeMillis());
         try {
             Thread.sleep(2000);
@@ -22,7 +22,8 @@ class Demo18Service{
         }
         System.out.println(Thread.currentThread().getName() + "结束方法foo1在" + System.currentTimeMillis());
     }
-    synchronized public static void foo2(){
+
+    synchronized public static void foo2() {
         System.out.println(Thread.currentThread().getName() + "进入方法foo2在" + System.currentTimeMillis());
         try {
             Thread.sleep(2000);
@@ -33,14 +34,14 @@ class Demo18Service{
     }
 }
 
-class Demo18ThreadA extends Thread{
+class Demo18ThreadA extends Thread {
     @Override
     public void run() {
         Demo18Service.foo1();
     }
 }
 
-class Demo18ThreadB extends Thread{
+class Demo18ThreadB extends Thread {
     @Override
     public void run() {
         Demo18Service.foo2();

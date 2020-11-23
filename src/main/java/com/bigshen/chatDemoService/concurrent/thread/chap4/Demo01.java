@@ -15,16 +15,17 @@ public class Demo01 {
     }
 }
 
-class Demo01Thread extends Thread{
+class Demo01Thread extends Thread {
     private Lock lock;
-    public Demo01Thread(Lock lock){
+
+    public Demo01Thread(Lock lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
         lock.lock();    // 加上同步锁
-        for (int i=0; i< 5; i++){
+        for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName() + ", " + (i + 1));
         }
         lock.unlock();  // 解开同步锁

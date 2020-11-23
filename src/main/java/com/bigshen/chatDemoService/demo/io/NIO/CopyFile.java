@@ -12,7 +12,7 @@ import java.nio.channels.FileChannel;
  */
 public class CopyFile {
     public static void main(String[] args) throws IOException {
-        RandomAccessFile fromFile=new RandomAccessFile("fromFile.txt","rw");
+        RandomAccessFile fromFile = new RandomAccessFile("fromFile.txt", "rw");
         FileChannel fromChannel = fromFile.getChannel();
 
         RandomAccessFile toFile = new RandomAccessFile("toFile.txt", "rw");
@@ -34,7 +34,7 @@ public class CopyFile {
     }
 
     private static String readChannel(FileChannel channel) throws IOException {
-        ByteBuffer buffer=ByteBuffer.allocate(32);
+        ByteBuffer buffer = ByteBuffer.allocate(32);
         buffer.clear();
         //将 channel 读取位置设为 0，也就是文件开始位置
         channel.position(0);

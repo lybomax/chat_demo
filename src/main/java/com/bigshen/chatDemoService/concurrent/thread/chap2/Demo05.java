@@ -10,11 +10,11 @@ public class Demo05 {
     }
 }
 
-class Demo05User{
+class Demo05User {
     private String username = "a";
     private String password = "aa";
 
-    synchronized public void setUsernameAndPassword(String username, String password){
+    synchronized public void setUsernameAndPassword(String username, String password) {
         this.username = username;
         try {
             Thread.sleep(2000);
@@ -23,18 +23,19 @@ class Demo05User{
         }
         this.password = password;
         System.out.println("setUsernameAndPassword方法，线程名称：" + Thread.currentThread().getName() +
-                "，username=" +username + ", password=" + password);
+                "，username=" + username + ", password=" + password);
     }
 
-    synchronized public void getValue(){
+    synchronized public void getValue() {
         System.out.println("getValue方法，线程名称" + Thread.currentThread().getName() +
-                ", username=" + username + ", password=" + password );
+                ", username=" + username + ", password=" + password);
     }
 }
 
-class Demo05Thread extends Thread{
+class Demo05Thread extends Thread {
     private Demo05User user;
-    public Demo05Thread(Demo05User user){
+
+    public Demo05Thread(Demo05User user) {
         this.user = user;
     }
 

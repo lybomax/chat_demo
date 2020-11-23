@@ -2,7 +2,7 @@ package com.bigshen.chatDemoService.ArtConcurrentBook.chapter03;
 
 public class FinalReferenceEscapeExample {
 
-    final int                          i;
+    final int i;
     static FinalReferenceEscapeExample obj;
 
     public FinalReferenceEscapeExample() {

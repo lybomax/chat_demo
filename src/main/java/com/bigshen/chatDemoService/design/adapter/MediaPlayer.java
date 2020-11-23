@@ -6,5 +6,5 @@ package com.bigshen.chatDemoService.design.adapter;
  * @Date: 2019/12/3 16:04
  */
 public interface MediaPlayer {
-     void play(String audioType, String fileName);
+    void play(String audioType, String fileName);
 }

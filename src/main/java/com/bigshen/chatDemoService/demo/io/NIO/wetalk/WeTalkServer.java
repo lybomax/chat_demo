@@ -15,12 +15,13 @@ import static com.bigshen.chatDemoService.demo.io.NIO.wetalk.WeTalkUtils.sendMsg
  * @Date: 2019/12/28 18:07
  */
 public class WeTalkServer {
-    private static final  String EXIT_MARK="exit";
+    private static final String EXIT_MARK = "exit";
     private int port;
 
-    private WeTalkServer(int port){
-        this.port=port;
+    private WeTalkServer(int port) {
+        this.port = port;
     }
+
     private void start() throws IOException {
         //1、创建服务端套接字通道，
         ServerSocketChannel ssc = ServerSocketChannel.open();
@@ -54,6 +55,7 @@ public class WeTalkServer {
         channel.close();
         ssc.close();
     }
+
     public static void main(String[] args) throws IOException {
         new WeTalkServer(8080).start();
     }

@@ -15,6 +15,7 @@ public class InterceptionStr {
 
     /**
      * 主方法
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -30,6 +31,7 @@ public class InterceptionStr {
 
     /**
      * 此方法的作用是将字符串转换成字符串数组
+     *
      * @return
      */
     private static String[] setValue() {
@@ -42,12 +44,13 @@ public class InterceptionStr {
 
     /**
      * 截取策略
+     *
      * @param strings
      */
     private static void Interception(String[] strings) {
         int count = 0;
         String m = "[\u4e00-\u9fa5]";
-        System.out.println("以每"+n+"字节划分的字符串如下所示");
+        System.out.println("以每" + n + "字节划分的字符串如下所示");
         for (String string : strings) {
             if (string.matches(m)) {
                 //中文的正则表达式：+2

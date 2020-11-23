@@ -13,9 +13,10 @@ public class Demo01 {
     }
 }
 
-class Demo01ThreadA extends Thread{
+class Demo01ThreadA extends Thread {
     private List list;
-    public Demo01ThreadA(List list){
+
+    public Demo01ThreadA(List list) {
         this.list = list;
     }
 
@@ -27,16 +28,17 @@ class Demo01ThreadA extends Thread{
                 System.out.println("添加了" + (i + 1) + "个元素");
                 Thread.sleep(1000);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo01ThreadB extends Thread{
+class Demo01ThreadB extends Thread {
     // 强制线程从公共堆栈中获取数据
     volatile private List list;
-    public Demo01ThreadB(List list){
+
+    public Demo01ThreadB(List list) {
         this.list = list;
     }
 
@@ -49,7 +51,7 @@ class Demo01ThreadB extends Thread{
                     throw new InterruptedException();
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

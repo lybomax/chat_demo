@@ -12,27 +12,28 @@ public class Demo14 {
     }
 }
 
-class Demo14Service{
-    synchronized public void foo1(){
+class Demo14Service {
+    synchronized public void foo1() {
         System.out.println("foo1正在运行");
     }
 
-    public void foo2(){
+    public void foo2() {
         try {
             synchronized (this) {
                 System.out.println("foo2开始");
                 Thread.sleep(2000);
                 System.out.println("foo2结束");
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo14ThreadA extends Thread{
+class Demo14ThreadA extends Thread {
     private Demo14Service service;
-    public Demo14ThreadA(Demo14Service service){
+
+    public Demo14ThreadA(Demo14Service service) {
         this.service = service;
     }
 
@@ -42,9 +43,10 @@ class Demo14ThreadA extends Thread{
     }
 }
 
-class Demo14ThreadB extends Thread{
+class Demo14ThreadB extends Thread {
     private Demo14Service service;
-    public Demo14ThreadB(Demo14Service service){
+
+    public Demo14ThreadB(Demo14Service service) {
         this.service = service;
     }
 

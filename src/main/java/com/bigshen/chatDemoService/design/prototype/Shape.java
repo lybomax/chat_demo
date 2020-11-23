@@ -5,14 +5,14 @@ package com.bigshen.chatDemoService.design.prototype;
  * @Author: byj
  * @Date: 2019/12/3 15:49
  */
-public abstract class Shape implements Cloneable{
+public abstract class Shape implements Cloneable {
 
     private String id;
     String type;
 
     abstract void draw();
 
-    String getType(){
+    String getType() {
         return type;
     }
 

@@ -14,8 +14,9 @@ public class Demo03 {
 
 class Demo03Service {
     private int num;
-    synchronized public void add(String username){
-        if ("a".equals(username)){
+
+    synchronized public void add(String username) {
+        if ("a".equals(username)) {
             num = 100;
             System.out.println("a is set");
             try {
@@ -23,7 +24,7 @@ class Demo03Service {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }else{
+        } else {
             num = 200;
             System.out.println("b is set");
         }
@@ -31,9 +32,10 @@ class Demo03Service {
     }
 }
 
-class Demo03ThreadA extends Thread{
+class Demo03ThreadA extends Thread {
     private Demo03Service service;
-    public Demo03ThreadA(Demo03Service service){
+
+    public Demo03ThreadA(Demo03Service service) {
         this.service = service;
     }
 
@@ -43,9 +45,10 @@ class Demo03ThreadA extends Thread{
     }
 }
 
-class Demo03ThreadB extends Thread{
+class Demo03ThreadB extends Thread {
     private Demo03Service service;
-    public Demo03ThreadB(Demo03Service service){
+
+    public Demo03ThreadB(Demo03Service service) {
         this.service = service;
     }
 

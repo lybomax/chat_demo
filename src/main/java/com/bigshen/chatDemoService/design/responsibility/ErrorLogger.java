@@ -9,7 +9,7 @@ package com.bigshen.chatDemoService.design.responsibility;
  **/
 public class ErrorLogger extends AbstractLogger {
 
-    public ErrorLogger(int level){
+    public ErrorLogger(int level) {
         this.level = level;
     }
 

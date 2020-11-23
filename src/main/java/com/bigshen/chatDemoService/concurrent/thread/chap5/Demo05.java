@@ -14,11 +14,11 @@ public class Demo05 {
     }
 }
 
-class Demo05Callable implements Callable<Integer>{
+class Demo05Callable implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         System.out.println(Thread.currentThread().getName() + "调用了callable接口的实现类");
-        int val = (int)(Math.random() * 10);
+        int val = (int) (Math.random() * 10);
         System.out.println("准备返回的值是：" + val);
         return val;
     }

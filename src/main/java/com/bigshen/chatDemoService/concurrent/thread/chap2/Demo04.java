@@ -11,7 +11,7 @@ public class Demo04 {
 }
 
 class Demo04Service {
-    synchronized public void foo1(){
+    synchronized public void foo1() {
         System.out.println("开始运行foo1方法，threadName：" + Thread.currentThread().getName());
         try {
             Thread.sleep(2000);
@@ -21,7 +21,7 @@ class Demo04Service {
         System.out.println("foo1方法运行结束");
     }
 
-    public void foo2(){
+    public void foo2() {
         System.out.println("开始运行foo2方法，threadName：" + Thread.currentThread().getName());
         try {
             Thread.sleep(2000);
@@ -32,9 +32,10 @@ class Demo04Service {
     }
 }
 
-class Demo04ThreadA extends Thread{
+class Demo04ThreadA extends Thread {
     private Demo04Service service;
-    public Demo04ThreadA(Demo04Service service){
+
+    public Demo04ThreadA(Demo04Service service) {
         this.service = service;
     }
 
@@ -44,9 +45,10 @@ class Demo04ThreadA extends Thread{
     }
 }
 
-class Demo04ThreadB extends Thread{
+class Demo04ThreadB extends Thread {
     private Demo04Service service;
-    public Demo04ThreadB(Demo04Service service){
+
+    public Demo04ThreadB(Demo04Service service) {
         this.service = service;
     }
 

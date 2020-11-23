@@ -10,23 +10,24 @@ public class Demo09 {
     }
 }
 
-class Demo09VO{
+class Demo09VO {
     public static String value = "";
 }
 
 // 生产者
 class Demo09Producer extends Thread {
     private Object lock;
-    public Demo09Producer(Object lock){
+
+    public Demo09Producer(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        try{
-            while(true) {
+        try {
+            while (true) {
                 synchronized (lock) {
-                    if (!"".equals(Demo09VO.value)){
+                    if (!"".equals(Demo09VO.value)) {
                         lock.wait();
                     }
                     String value = System.currentTimeMillis() + "_" + System.nanoTime();
@@ -35,24 +36,25 @@ class Demo09Producer extends Thread {
                     lock.notify();
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo09Consumer extends Thread{
+class Demo09Consumer extends Thread {
     private Object lock;
-    public Demo09Consumer(Object lock){
+
+    public Demo09Consumer(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        try{
-            while(true){
-                synchronized (lock){
-                    if ("".equals(Demo09VO.value)){
+        try {
+            while (true) {
+                synchronized (lock) {
+                    if ("".equals(Demo09VO.value)) {
                         lock.wait();
                     }
                     System.out.println("Get的值是：" + Demo09VO.value);
@@ -60,7 +62,7 @@ class Demo09Consumer extends Thread{
                     lock.notify();
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

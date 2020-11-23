@@ -9,6 +9,6 @@ package com.bigshen.chatDemoService.jvm.classLoading;
  **/
 public class NoInitialization02 {
     public static void main(String[] args) {
-        SuperClass[] sca=new SuperClass[10];
+        SuperClass[] sca = new SuperClass[10];
     }
 }

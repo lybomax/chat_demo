@@ -41,12 +41,12 @@ public class ConditionUseCase {
         lock.lock();
         try {
             Thread.sleep(5000);
-            System.out.println(Thread.currentThread().getName()+"拿到了锁");
+            System.out.println(Thread.currentThread().getName() + "拿到了锁");
             condition.signal();
-            System.out.println(Thread.currentThread().getName()+"发出信号");
-        }catch (Exception e){
+            System.out.println(Thread.currentThread().getName() + "发出信号");
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             lock.unlock();
         }
     }

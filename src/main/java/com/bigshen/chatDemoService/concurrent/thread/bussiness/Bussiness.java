@@ -30,8 +30,8 @@ class Bussiness {
         notify();
     }
 
-    synchronized void subMethod(){
-        while (!subFlag){
+    synchronized void subMethod() {
+        while (!subFlag) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -39,7 +39,7 @@ class Bussiness {
             }
         }
         for (int i = 0; i < 10; i++) {
-            System.out.println(Thread.currentThread().getName()+
+            System.out.println(Thread.currentThread().getName() +
                     " : sub thread running loop count -- " + i);
         }
         try {
@@ -47,7 +47,7 @@ class Bussiness {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        subFlag=false;
+        subFlag = false;
         notify();
     }
 }

@@ -5,10 +5,9 @@ import java.util.Random;
 /**
  * @Author BYJ
  * @Date 2020/11/19 21:38
- * @Describe
- *  1，跳表的一种实现方法，用于练习。跳表中存储的是正整数，并且存储的是不重复的。
- *  2，本类是参考作者zheng ，自己学习，优化了添加方法
- *  3，看完这个，我觉得再看ConcurrentSkipListMap 源码，会有很大收获
+ * @Describe 1，跳表的一种实现方法，用于练习。跳表中存储的是正整数，并且存储的是不重复的。
+ * 2，本类是参考作者zheng ，自己学习，优化了添加方法
+ * 3，看完这个，我觉得再看ConcurrentSkipListMap 源码，会有很大收获
  */
 public class SkipList02 {
     private static final int MAX_LEVEL = 16;
@@ -22,7 +21,9 @@ public class SkipList02 {
 
     /**
      * 查询方法
+     *
      * @param value
+     *
      * @return
      */
     public Node find(int value) {
@@ -262,6 +263,7 @@ public class SkipList02 {
 
     /**
      * 测试  Main
+     *
      * @param args
      */
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
 package com.bigshen.chatDemoService.idGenerator.two;
+
 import org.junit.Test;
 
 /**
@@ -18,11 +19,11 @@ public class TestIDGenerate {
         String[] parts = id.split("-");
 
         String lastHostName = parts[0];
-        System.out.println("lastHostName:"+lastHostName);
+        System.out.println("lastHostName:" + lastHostName);
         String randChars = parts[1];
-        System.out.println("randChars:"+randChars);
+        System.out.println("randChars:" + randChars);
         String time = parts[2];
-        System.out.println("time:"+time);
+        System.out.println("time:" + time);
         System.out.println(id);
     }
 }

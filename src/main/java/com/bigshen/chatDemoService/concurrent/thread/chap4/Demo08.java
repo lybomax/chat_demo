@@ -20,40 +20,41 @@ public class Demo08 {
     }
 }
 
-class Demo08Service{
+class Demo08Service {
     private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
-    public void read(){
-        try{
+    public void read() {
+        try {
             lock.readLock().lock();
             System.out.println(Thread.currentThread().getName() + "获得读锁于" + System.currentTimeMillis());
             Thread.sleep(1000);
             System.out.println(Thread.currentThread().getName() + "解除读锁于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             lock.readLock().unlock();
         }
     }
 
-    public void write(){
-        try{
+    public void write() {
+        try {
             lock.writeLock().lock();
             System.out.println(Thread.currentThread().getName() + "获得写锁于" + System.currentTimeMillis());
             Thread.sleep(1000);
             System.out.println(Thread.currentThread().getName() + "解除写锁于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             lock.writeLock().unlock();
         }
     }
 }
 
 
-class Demo08ThreadA extends Thread{
+class Demo08ThreadA extends Thread {
     private Demo08Service service;
-    public Demo08ThreadA(Demo08Service service){
+
+    public Demo08ThreadA(Demo08Service service) {
         this.service = service;
     }
 
@@ -63,9 +64,10 @@ class Demo08ThreadA extends Thread{
     }
 }
 
-class Demo08ThreadB extends Thread{
+class Demo08ThreadB extends Thread {
     private Demo08Service service;
-    public Demo08ThreadB(Demo08Service service){
+
+    public Demo08ThreadB(Demo08Service service) {
         this.service = service;
     }
 

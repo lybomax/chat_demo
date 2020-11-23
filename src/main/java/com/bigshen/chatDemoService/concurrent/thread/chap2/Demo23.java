@@ -15,12 +15,12 @@ public class Demo23 {
     }
 }
 
-class Demo23Thread extends Thread{
+class Demo23Thread extends Thread {
     private String flag;    // 标志，控制代码以什么样的方式运行
     private Object lock1 = new Object();
     private Object lock2 = new Object();
 
-    public void setFlag(String flag){
+    public void setFlag(String flag) {
         this.flag = flag;
     }
 
@@ -36,15 +36,15 @@ class Demo23Thread extends Thread{
                     }
                 }
             } else {
-                synchronized (lock2){
+                synchronized (lock2) {
                     System.out.println("flag=" + flag);
                     Thread.sleep(3000);
-                    synchronized (lock1){
+                    synchronized (lock1) {
                         System.out.println("按lock2->lock1的顺序执行");
                     }
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

@@ -14,28 +14,29 @@ public class Demo12 {
 }
 
 class Demo12Service {
-    public void foo(){
-        try{
+    public void foo() {
+        try {
             for (int i = 0; i < 100; i++) {
                 System.out.println("非同步线程" + Thread.currentThread().getName() + ", i=" + i);
                 Thread.sleep(10);
             }
             System.out.println();
-            synchronized (this){
+            synchronized (this) {
                 for (int i = 0; i < 100; i++) {
                     System.out.println("同步线程" + Thread.currentThread().getName() + ", i=" + i);
                     Thread.sleep(10);
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo12Thread extends Thread{
+class Demo12Thread extends Thread {
     private Demo12Service service;
-    public Demo12Thread(Demo12Service service){
+
+    public Demo12Thread(Demo12Service service) {
         this.service = service;
     }
 

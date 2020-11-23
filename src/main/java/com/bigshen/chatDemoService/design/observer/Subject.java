@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 /**
  * @Description:
  * @Author: BIGSHEN
@@ -23,6 +22,7 @@ class Subject {
 
     /**
      * 值被修改则通知所有观察者
+     *
      * @param state
      */
     void setState(int state) {
@@ -32,16 +32,17 @@ class Subject {
 
     /**
      * 添加观察者
+     *
      * @param observer
      */
-    void attach(Observer observer){
+    void attach(Observer observer) {
         observers.add(observer);
     }
 
     /**
      * 通知所有观察者实体值被修改了
      */
-    private void notifyAllObservers(){
+    private void notifyAllObservers() {
         for (Observer observer : observers) {
             observer.update();
         }

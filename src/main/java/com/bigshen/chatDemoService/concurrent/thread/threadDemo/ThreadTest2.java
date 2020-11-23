@@ -6,16 +6,17 @@ package com.bigshen.chatDemoService.concurrent.thread.threadDemo;
  * @Date: 2019/12/15 19:04
  */
 public class ThreadTest2 implements Runnable {
-    public static int j=500;
+    public static int j = 500;
     public static int k;
+
     @Override
-    public void run(){
+    public void run() {
 
         try {
-            for(int i=0;i<10000;i++){
-                synchronized (ThreadMain.class){
+            for (int i = 0; i < 10000; i++) {
+                synchronized (ThreadMain.class) {
                     j++;
-                    System.out.println("线程2====="+j);
+                    System.out.println("线程2=====" + j);
                     Thread.sleep(100);
                 }
             }

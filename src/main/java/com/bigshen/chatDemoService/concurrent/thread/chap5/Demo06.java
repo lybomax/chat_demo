@@ -30,8 +30,9 @@ public class Demo06 {
     }
 }
 
-class Demo06Runnable implements Runnable{
+class Demo06Runnable implements Runnable {
     static long waitTime = 1000;
+
     @Override
     public void run() {
         try {
@@ -41,7 +42,7 @@ class Demo06Runnable implements Runnable{
             }
             Thread.sleep(waitTime);
             System.out.println(Thread.currentThread().getName() + "结束于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

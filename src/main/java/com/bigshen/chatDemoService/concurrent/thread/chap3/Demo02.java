@@ -9,7 +9,7 @@ public class Demo02 {
 
             String str = new String();
             System.out.println("同步代码块之前");
-            synchronized (str){
+            synchronized (str) {
                 System.out.println("同步代码块的第一行");
                 str.wait();
                 System.out.println("wait之后的第一行代码");

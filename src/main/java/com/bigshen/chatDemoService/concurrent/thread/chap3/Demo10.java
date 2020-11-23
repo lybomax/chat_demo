@@ -7,7 +7,7 @@ public class Demo10 {
         Thread[] producers = new Thread[size];
         Thread[] consumers = new Thread[size];
         for (int i = 0; i < size; i++) {
-            char c = (char)('A' + i);
+            char c = (char) ('A' + i);
             producers[i] = new Demo10Producer(lock);
             producers[i].setName("生产者" + c);
 
@@ -20,23 +20,24 @@ public class Demo10 {
     }
 }
 
-class Demo10VO{
+class Demo10VO {
     public static String value = "";
 }
 
 // 生产者
 class Demo10Producer extends Thread {
     private Object lock;
-    public Demo10Producer(Object lock){
+
+    public Demo10Producer(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        try{
-            while(true) {
+        try {
+            while (true) {
                 synchronized (lock) {
-                    if (!"".equals(Demo10VO.value)){
+                    if (!"".equals(Demo10VO.value)) {
                         System.out.println(Thread.currentThread().getName() + "等待中……");
                         lock.wait();
                     }
@@ -47,24 +48,25 @@ class Demo10Producer extends Thread {
                     lock.notifyAll();
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo10Consumer extends Thread{
+class Demo10Consumer extends Thread {
     private Object lock;
-    public Demo10Consumer(Object lock){
+
+    public Demo10Consumer(Object lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
-        try{
-            while(true){
-                synchronized (lock){
-                    if ("".equals(Demo10VO.value)){
+        try {
+            while (true) {
+                synchronized (lock) {
+                    if ("".equals(Demo10VO.value)) {
                         System.out.println(Thread.currentThread().getName() + "等待中……");
                         lock.wait();
                     }
@@ -74,7 +76,7 @@ class Demo10Consumer extends Thread{
                     lock.notifyAll();
                 }
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

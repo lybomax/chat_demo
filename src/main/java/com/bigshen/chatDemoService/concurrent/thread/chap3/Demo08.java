@@ -16,17 +16,18 @@ public class Demo08 {
     }
 }
 
-class Demo08Service{
+class Demo08Service {
     private List list = new ArrayList();
     private Object lock = new Object();
 
-    public void add(){
-        synchronized (lock){
+    public void add() {
+        synchronized (lock) {
             list.add("a");
             lock.notifyAll();
         }
     }
-    public void subtrac(){
+
+    public void subtrac() {
         try {
             synchronized (lock) {
                 if (list.size() == 0) {
@@ -39,14 +40,16 @@ class Demo08Service{
                 }
                 System.out.println(Thread.currentThread().getName() + "：list的大小是" + list.size());
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
-class Demo08ThreadA extends Thread{
+
+class Demo08ThreadA extends Thread {
     private Demo08Service service;
-    public Demo08ThreadA(Demo08Service service){
+
+    public Demo08ThreadA(Demo08Service service) {
         this.service = service;
     }
 
@@ -55,9 +58,11 @@ class Demo08ThreadA extends Thread{
         service.add();
     }
 }
-class Demo08ThreadB extends Thread{
+
+class Demo08ThreadB extends Thread {
     private Demo08Service service;
-    public Demo08ThreadB(Demo08Service service){
+
+    public Demo08ThreadB(Demo08Service service) {
         this.service = service;
     }
 

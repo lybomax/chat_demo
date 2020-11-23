@@ -9,7 +9,7 @@ public class Demo13 {
     }
 }
 
-class Demo13Thread extends Thread{
+class Demo13Thread extends Thread {
     @Override
     public void run() {
         try {
@@ -17,9 +17,9 @@ class Demo13Thread extends Thread{
                 System.out.println("time=" + System.currentTimeMillis());
                 Thread.sleep(1000);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
-        }catch (ThreadDeath e){
+        } catch (ThreadDeath e) {
             System.out.println("进入catch块");
             e.printStackTrace();
         }

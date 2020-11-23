@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ArrayListProxy {
     public static void main(String[] args) {
-        final List<String> list=new ArrayList<String>();
+        final List<String> list = new ArrayList<String>();
         list.add("我好");
         List<String> proxyInstance = (List<String>) Proxy.newProxyInstance(list.getClass().getClassLoader(),
                 list.getClass().getInterfaces(), (proxy, method, args1) -> method.invoke(list, args1));

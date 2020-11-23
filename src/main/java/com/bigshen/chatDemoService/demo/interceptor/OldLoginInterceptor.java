@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @Description:OldLoginInterceptor**是一个拦截器，如果用户输入已经被废弃的链接
- * “ / admin / oldLogin”，它将重定向到新的 “ / admin / login”。
+ * @Description:OldLoginInterceptor**是一个拦截器，如果用户输入已经被废弃的链接 “ / admin / oldLogin”，它将重定向到新的 “ / admin / login”。
  * @Author: BIGSHEN
  * @Date: 2019/12/29 9:52
  */

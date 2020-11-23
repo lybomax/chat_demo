@@ -15,10 +15,10 @@ public class Demo24 {
     }
 }
 
-class Demo24Service{
+class Demo24Service {
     private String lockObject = "123";
 
-    public void foo(){
+    public void foo() {
         try {
             synchronized (lockObject) {
                 System.out.println(Thread.currentThread().getName() + "开始于" + System.currentTimeMillis());
@@ -26,15 +26,16 @@ class Demo24Service{
                 Thread.sleep(2000);
                 System.out.println(Thread.currentThread().getName() + "结束于" + System.currentTimeMillis());
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo24Thread extends Thread{
+class Demo24Thread extends Thread {
     private Demo24Service service;
-    public Demo24Thread(Demo24Service service){
+
+    public Demo24Thread(Demo24Service service) {
         this.service = service;
     }
 

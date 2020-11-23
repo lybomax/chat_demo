@@ -3,7 +3,7 @@ package com.bigshen.chatDemoService.concurrent.thread.chap1;
 public class Demo22 {
     public static void main(String[] args) throws InterruptedException {
         Demo22User user = new Demo22User();
-        Thread t1 = new Thread(){
+        Thread t1 = new Thread() {
             @Override
             public void run() {
                 user.updateUsernameAndPassword("b", "bb");
@@ -14,7 +14,7 @@ public class Demo22 {
 
         Thread.sleep(10);
 
-        Thread t2 = new Thread(){
+        Thread t2 = new Thread() {
             @Override
             public void run() {
                 user.printUseruserAndPassword();
@@ -28,16 +28,16 @@ class Demo22User {
     private String username = "a";
     private String password = "aa";
 
-    public void updateUsernameAndPassword(String username, String password){
+    public void updateUsernameAndPassword(String username, String password) {
         this.username = username;
-        if ("A".equals(Thread.currentThread().getName())){
+        if ("A".equals(Thread.currentThread().getName())) {
             System.out.println("停止A线程");
             Thread.currentThread().suspend();
         }
         this.password = password;
     }
 
-    public void printUseruserAndPassword(){
-        System.out.println("username=" + username + ", password=" +password);
+    public void printUseruserAndPassword() {
+        System.out.println("username=" + username + ", password=" + password);
     }
 }

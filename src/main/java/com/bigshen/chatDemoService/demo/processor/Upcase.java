@@ -6,7 +6,7 @@ package com.bigshen.chatDemoService.demo.processor;
  * @Date: 2019/12/21 15:54
  */
 public class Upcase extends Processor {
-    String process(Object input){
+    String process(Object input) {
         return ((String) input).toUpperCase();
     }
 }

@@ -7,7 +7,7 @@ package com.bigshen.chatDemoService.jvm.classLoader;
  * @Date 2020/10/21
  * @Version V1.0
  **/
-public class ClassLoaderTest2{
+public class ClassLoaderTest2 {
     public static void main(String[] args) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         System.out.println(classLoader);

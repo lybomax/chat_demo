@@ -12,6 +12,7 @@ public class SerialNum {
             return nextSerialNum++;
         }
     };
+
     public static int get() {
         return (Integer) (serialNum.get());
     }

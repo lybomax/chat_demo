@@ -9,14 +9,14 @@ public class Demo15 {
     }
 }
 
-class Demo15Thread extends Thread{
+class Demo15Thread extends Thread {
     @Override
     public void run() {
         try {
             int value = (int) (Math.random() * 10000);
             System.out.println("需要等待" + value + "毫秒");
             Thread.sleep(value);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

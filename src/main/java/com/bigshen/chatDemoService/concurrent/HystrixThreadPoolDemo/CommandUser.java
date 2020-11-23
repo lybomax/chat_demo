@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * Function:用户服务
  *
  * @author crossoverJie
- *         Date: 2018/7/28 16:43
+ * Date: 2018/7/28 16:43
  * @since JDK 1.8
  */
 public class CommandUser extends HystrixCommand<String> {

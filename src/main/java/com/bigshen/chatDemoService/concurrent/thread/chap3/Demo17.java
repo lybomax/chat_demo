@@ -9,14 +9,14 @@ public class Demo17 {
     }
 }
 
-class Demo17Thread extends Thread{
+class Demo17Thread extends Thread {
     @Override
     public void run() {
         try {
             System.out.println("子线程开始于" + System.currentTimeMillis());
             Thread.sleep(5000);
             System.out.println("子线程结束于" + System.currentTimeMillis());
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

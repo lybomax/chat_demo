@@ -2,7 +2,7 @@ package com.bigshen.chatDemoService.concurrent.thread.chap1;
 
 public class Demo01 {
     public static void main(String[] args) throws InterruptedException {
-        while(true){
+        while (true) {
             System.out.println(System.currentTimeMillis());
             Thread.sleep(1000);
         }

@@ -1,7 +1,7 @@
 package com.bigshen.chatDemoService.ArtConcurrentBook.chapter03;
 
 class SynchronizedExample {
-    int     a    = 0;
+    int a = 0;
     boolean flag = false;
 
     public synchronized void writer() { //»ñÈ¡Ëø

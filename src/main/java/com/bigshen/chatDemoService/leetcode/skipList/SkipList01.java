@@ -6,8 +6,8 @@ package com.bigshen.chatDemoService.leetcode.skipList;
  * @Describe 跳表的一种实现方法。跳表中存储的是正整数，并且存储的是不重复的。
  */
 public class SkipList01 {
-    private static final float SKIPLIST_P=0.5f;
-    private static final int MAX_LEVEL=16;
+    private static final float SKIPLIST_P = 0.5f;
+    private static final int MAX_LEVEL = 16;
     private int levelCount = 1;
 
     // 带头链表
@@ -15,7 +15,9 @@ public class SkipList01 {
 
     /**
      * 查找节点
+     *
      * @param value
+     *
      * @return
      */
     public Node find(int value) {
@@ -35,6 +37,7 @@ public class SkipList01 {
 
     /**
      * 插入节点
+     *
      * @param value
      */
     public void insert(int value) {
@@ -69,6 +72,7 @@ public class SkipList01 {
 
     /**
      * 删除节点，在查找要删除的结点的时候，一定要获取前驱结点
+     *
      * @param value
      */
     public void delete(int value) {
@@ -89,19 +93,20 @@ public class SkipList01 {
             }
         }
 
-        while (levelCount>1&&head.forwards[levelCount]==null){
+        while (levelCount > 1 && head.forwards[levelCount] == null) {
             levelCount--;
         }
 
     }
 
     /**
-     *  理论来讲，一级索引中元素个数应该占原始数据的 50%，二级索引中元素个数占 25%，三级索引12.5% ，一直到最顶层。
-     *      因为这里每一层的晋升概率是 50%。对于每一个新插入的节点，都需要调用 randomLevel 生成一个合理的层数。
-     *      该 randomLevel 方法会随机生成 1~MAX_LEVEL 之间的数，且 ：
-     *             50%的概率返回 1
-     *             25%的概率返回 2
-     *           12.5%的概率返回 3 ...
+     * 理论来讲，一级索引中元素个数应该占原始数据的 50%，二级索引中元素个数占 25%，三级索引12.5% ，一直到最顶层。
+     * 因为这里每一层的晋升概率是 50%。对于每一个新插入的节点，都需要调用 randomLevel 生成一个合理的层数。
+     * 该 randomLevel 方法会随机生成 1~MAX_LEVEL 之间的数，且 ：
+     * 50%的概率返回 1
+     * 25%的概率返回 2
+     * 12.5%的概率返回 3 ...
+     *
      * @return
      */
     private int randomLevel() {

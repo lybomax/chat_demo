@@ -6,17 +6,17 @@ package com.bigshen.chatDemoService.concurrent.queue;
  * @Date: 2019/12/21 17:47
  */
 public class CircularQueue {
-    /**数组：items*/
+    /** 数组：items */
     private String[] items;
-    /**数组大小n*/
+    /** 数组大小n */
     private int n;
-    /**tail表示队尾下标*/
+    /** tail表示队尾下标 */
     private int tail = 0;
-    /**head表示队头下标*/
+    /** head表示队头下标 */
     private int head = 0;
 
     /**
-     申请一个大小为capacity的数组
+     * 申请一个大小为capacity的数组
      */
     public CircularQueue(int capacity) {
         items = new String[capacity];
@@ -24,7 +24,7 @@ public class CircularQueue {
     }
 
     /**
-     入队
+     * 入队
      */
     public boolean enqueue(String item) {
         // 队列满了
@@ -37,7 +37,7 @@ public class CircularQueue {
     }
 
     /**
-     出队
+     * 出队
      */
     public String dequeue() {
         // 如果head == tail 表示队列为空

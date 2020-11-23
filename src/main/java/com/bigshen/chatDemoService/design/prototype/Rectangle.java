@@ -7,11 +7,12 @@ package com.bigshen.chatDemoService.design.prototype;
  */
 public class Rectangle extends Shape {
 
-    Rectangle(){
+    Rectangle() {
         type = "Rectangle";
     }
 
     @Override
     public void draw() {
         System.out.println("Inside Rectangle::draw() method.");
-    }}
+    }
+}

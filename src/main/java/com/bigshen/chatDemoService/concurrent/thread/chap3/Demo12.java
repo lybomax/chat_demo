@@ -13,16 +13,16 @@ public class Demo12 {
         Thread[] consumers = new Thread[5];
         for (int i = 0; i < consumers.length; i++) {
             consumers[i] = new Demo12Consumer(vo);
-            consumers[i].setName("消费者" + (char)('A' + i));
+            consumers[i].setName("消费者" + (char) ('A' + i));
             consumers[i].start();
         }
     }
 }
 
-class Demo12VO{
+class Demo12VO {
     private List<String> list = new ArrayList<>();
 
-    synchronized public void push(String val){
+    synchronized public void push(String val) {
         try {
             if (list.size() == 1) {
                 System.out.println(Thread.currentThread().getName() + "等待中");
@@ -30,14 +30,14 @@ class Demo12VO{
             }
             list.add(val);
             System.out.println(Thread.currentThread().getName() + "：添加数据" + val);
-            System.out.println(Thread.currentThread().getName() + "：还有" +  list.size() + "个数据");
+            System.out.println(Thread.currentThread().getName() + "：还有" + list.size() + "个数据");
             this.notify();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    synchronized public String pop(){
+    synchronized public String pop() {
         String returnValue = null;
         try {
             while (list.size() == 0) {
@@ -50,36 +50,38 @@ class Demo12VO{
             System.out.println(Thread.currentThread().getName() + "：还有" + list.size() + "个数据");
 //            this.notify();
             this.notifyAll();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return returnValue;
     }
 }
 
-class Demo12Producer extends Thread{
+class Demo12Producer extends Thread {
     private Demo12VO vo;
-    public Demo12Producer(Demo12VO vo){
+
+    public Demo12Producer(Demo12VO vo) {
         this.vo = vo;
     }
 
     @Override
     public void run() {
-        while(true) {
+        while (true) {
             vo.push(Math.random() + "");
         }
     }
 }
 
-class Demo12Consumer extends Thread{
+class Demo12Consumer extends Thread {
     private Demo12VO vo;
-    public Demo12Consumer(Demo12VO vo){
+
+    public Demo12Consumer(Demo12VO vo) {
         this.vo = vo;
     }
 
     @Override
     public void run() {
-        while(true){
+        while (true) {
             vo.pop();
         }
     }

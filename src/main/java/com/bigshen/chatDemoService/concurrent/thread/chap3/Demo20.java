@@ -13,9 +13,10 @@ public class Demo20 {
     }
 }
 
-class Demo20ThreadA extends Thread{
+class Demo20ThreadA extends Thread {
     private ThreadLocal tl;
-    public Demo20ThreadA(ThreadLocal tl){
+
+    public Demo20ThreadA(ThreadLocal tl) {
         this.tl = tl;
     }
 
@@ -27,7 +28,7 @@ class Demo20ThreadA extends Thread{
                 System.out.println(Thread.currentThread().getName() + " get value = " + tl.get());
                 Thread.sleep(100);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

@@ -11,9 +11,10 @@ public class Demo14 {
     }
 }
 
-class Demo14Thread extends Thread{
+class Demo14Thread extends Thread {
     private Demo14User user;
-    public Demo14Thread(Demo14User user){
+
+    public Demo14Thread(Demo14User user) {
         this.user = user;
     }
 
@@ -26,24 +27,29 @@ class Demo14Thread extends Thread{
 class Demo14User {
     private String username = "a";
     private String password = "aa";
-    public void setUsername(String username){
+
+    public void setUsername(String username) {
         this.username = username;
     }
-    public String getUsername(){
+
+    public String getUsername() {
         return username;
     }
-    public void setPassword(String passpword){
+
+    public void setPassword(String passpword) {
         this.password = passpword;
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return password;
     }
-    synchronized public void updateUsernameAndPassword(String username, String password){
+
+    synchronized public void updateUsernameAndPassword(String username, String password) {
         try {
             this.username = username;
             Thread.sleep(10000);
             this.password = password;
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

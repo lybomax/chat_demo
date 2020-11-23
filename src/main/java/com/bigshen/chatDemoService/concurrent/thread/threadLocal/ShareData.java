@@ -6,10 +6,11 @@ package com.bigshen.chatDemoService.concurrent.thread.threadLocal;
  * @Date: 2019/12/22 11:01
  */
 class ShareData {
-    private int num=10;
-    synchronized void inc(){
+    private int num = 10;
+
+    synchronized void inc() {
         num++;
-        System.out.println(Thread.currentThread().getName()+":invoke inc method num="+num);
+        System.out.println(Thread.currentThread().getName() + ":invoke inc method num=" + num);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -18,11 +19,13 @@ class ShareData {
     }
 
 }
-class RunnableCusToInc implements Runnable{
+
+class RunnableCusToInc implements Runnable {
 
     private ShareData shareData;
-    private RunnableCusToInc(ShareData shareData){
-        this.shareData=shareData;
+
+    private RunnableCusToInc(ShareData shareData) {
+        this.shareData = shareData;
     }
 
     @Override
@@ -31,13 +34,14 @@ class RunnableCusToInc implements Runnable{
             shareData.inc();
         }
     }
+
     /**
-     *测试方法
+     * 测试方法
      **/
     public static void main(String[] args) {
         ShareData shareData = new ShareData();
         for (int i = 0; i < 4; i++) {
-            new Thread(new RunnableCusToInc(shareData),"Thread "+ i).start();
+            new Thread(new RunnableCusToInc(shareData), "Thread " + i).start();
         }
     }
 }

@@ -22,7 +22,6 @@ import java.util.List;
  * 输入: 10
  * 输出: false
  * 解释: 从右向左读, 为 01 。因此它不是一个回文数。
- *
  * @Author BYJ
  * @Date 2020/6/10
  * @Version V1.0
@@ -30,17 +29,17 @@ import java.util.List;
 public class IsPalindrome {
 
     public static boolean isPalindrome(int x) {
-        if(x<0) {
+        if (x < 0) {
             return false;
         }
-        int rem=0,y=0;
-        int quo=x;
-        while(quo!=0){
-            rem=quo%10;
-            y=y*10+rem;
-            quo=quo/10;
+        int rem = 0, y = 0;
+        int quo = x;
+        while (quo != 0) {
+            rem = quo % 10;
+            y = y * 10 + rem;
+            quo = quo / 10;
         }
-        return y==x;
+        return y == x;
     }
 
     public static void main(String[] args) {

@@ -15,9 +15,10 @@ public class Demo04 {
     }
 }
 
-class Demo04Thread extends Thread{
+class Demo04Thread extends Thread {
     private int val;
-    public Demo04Thread(int val){
+
+    public Demo04Thread(int val) {
         this.val = val;
     }
 

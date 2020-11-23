@@ -16,6 +16,6 @@ public class Singlton {
         if (singlton == null) {
             singlton = new Singlton();
         }
-        return  singlton;
+        return singlton;
     }
 }

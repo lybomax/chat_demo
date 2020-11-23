@@ -17,13 +17,13 @@ public class Demo25 {
     }
 }
 
-class Demo25User{
+class Demo25User {
     public String username;
     public String password;
 }
 
-class Demo25Service{
-    public void foo(Demo25User user){
+class Demo25Service {
+    public void foo(Demo25User user) {
         try {
             synchronized (user) {
                 System.out.println(Thread.currentThread().getName() + "开始" + System.currentTimeMillis());
@@ -33,17 +33,17 @@ class Demo25Service{
                 System.out.println(Thread.currentThread().getName() + "结束" + System.currentTimeMillis());
             }
 
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-class Demo25Thread extends Thread{
+class Demo25Thread extends Thread {
     private Demo25Service service;
     private Demo25User user;
 
-    public Demo25Thread(Demo25Service service, Demo25User user){
+    public Demo25Thread(Demo25Service service, Demo25User user) {
         this.service = service;
         this.user = user;
     }

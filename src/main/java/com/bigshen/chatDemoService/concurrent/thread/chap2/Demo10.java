@@ -12,22 +12,24 @@ public class Demo10 {
     }
 }
 
-class Demo10Service{
-    public void foo(){
+class Demo10Service {
+    public void foo() {
         try {
             synchronized (this) {
                 System.out.println(Thread.currentThread().getName() + "开始于" + System.currentTimeMillis());
                 Thread.sleep(2000);
                 System.out.println(Thread.currentThread().getName() + "结束于" + System.currentTimeMillis());
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
-class Demo10Thread extends Thread{
+
+class Demo10Thread extends Thread {
     private Demo10Service service;
-    public Demo10Thread(Demo10Service service){
+
+    public Demo10Thread(Demo10Service service) {
         this.service = service;
     }
 

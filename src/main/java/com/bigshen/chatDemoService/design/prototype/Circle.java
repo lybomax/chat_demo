@@ -5,13 +5,14 @@ package com.bigshen.chatDemoService.design.prototype;
  * @Author: byj
  * @Date: 2019/12/3 15:50
  */
-public class Circle extends Shape{
+public class Circle extends Shape {
 
-    public Circle(){
+    public Circle() {
         type = "Circle";
     }
 
     @Override
     public void draw() {
         System.out.println("Inside Circle::draw() method.");
-    }}
+    }
+}

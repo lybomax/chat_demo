@@ -8,12 +8,12 @@ package com.bigshen.chatDemoService.design.decorator;
 public abstract class BaseShapeDecorator implements Shape {
     Shape decoratedShape;
 
-    BaseShapeDecorator(Shape decoratedShape){
+    BaseShapeDecorator(Shape decoratedShape) {
         this.decoratedShape = decoratedShape;
     }
 
     @Override
-    public void draw(){
+    public void draw() {
         decoratedShape.draw();
     }
 }

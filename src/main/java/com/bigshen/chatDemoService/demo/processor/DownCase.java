@@ -6,7 +6,7 @@ package com.bigshen.chatDemoService.demo.processor;
  * @Date: 2019/12/21 15:56
  */
 public class DownCase extends Processor {
-    String process(Object input){
+    String process(Object input) {
         return ((String) input).toLowerCase();
     }
 }

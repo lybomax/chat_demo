@@ -36,11 +36,12 @@ public class ThreadDemo {
         t2.join();
         System.out.println("=============");
     }
+
     @org.junit.Test
     public void test02() throws InterruptedException {
         Executor executor = Executors.newFixedThreadPool(2);
         CountDownLatch latch = new CountDownLatch(2);
-        executor.execute(()->{
+        executor.execute(() -> {
             try {
                 Thread.sleep(1000);
                 System.out.println(Thread.currentThread().getName());
@@ -50,7 +51,7 @@ public class ThreadDemo {
             }
 
         });
-        executor.execute(()->{
+        executor.execute(() -> {
             try {
                 Thread.sleep(2000);
                 System.out.println(Thread.currentThread().getName());

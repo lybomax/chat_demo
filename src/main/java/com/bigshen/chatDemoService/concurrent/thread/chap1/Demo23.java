@@ -7,14 +7,14 @@ public class Demo23 {
     }
 }
 
-class Demo23Thread extends Thread{
+class Demo23Thread extends Thread {
     @Override
     public void run() {
         int count = 0;
         long start = System.currentTimeMillis();
         for (int i = 0; i < 500000; i++) {
             Thread.yield();
-            count  += i + 1;
+            count += i + 1;
         }
         long end = System.currentTimeMillis();
         System.out.println("用时：" + (end - start) + "毫秒");

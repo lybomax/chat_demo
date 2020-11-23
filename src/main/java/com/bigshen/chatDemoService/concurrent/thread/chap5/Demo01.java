@@ -11,8 +11,8 @@ public class Demo01 {
     }
 }
 
-class Demo01Thread extends Thread{
-    public Demo01Thread(){
+class Demo01Thread extends Thread {
+    public Demo01Thread() {
         System.out.println("构造方法的状态：" + Thread.currentThread().getState());
     }
 

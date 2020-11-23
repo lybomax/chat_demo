@@ -7,14 +7,13 @@ package com.bigshen.chatDemoService.leetcode.linkedList;
  * 链表练习：
  * 1.单链表反转
  * * 示例:
- *  * 输入: 1->2->3->4->5->NULL
- *  * 输出: 5->4->3->2->1->NULL
+ * * 输入: 1->2->3->4->5->NULL
+ * * 输出: 5->4->3->2->1->NULL
  *
  * 2.链表中环的检测
  * 3.两个有序链表合并
  * 4.删除链表倒数第n个节点
  * 5.求链表的中间节点
- *
  * @Author BYJ
  * @Date 2020/5/31
  * @Version V1.0
@@ -23,7 +22,9 @@ public class LinkedListDemo {
 
     /**
      * 单链表反转
+     *
      * @param head
+     *
      * @return
      */
     private static ListNode reverseList(ListNode head) {
@@ -45,40 +46,39 @@ public class LinkedListDemo {
         return prev;
     }
 
-    private static ListNode buildListNode(int[] input){
-        ListNode first = null,last = null,newNode;
+    private static ListNode buildListNode(int[] input) {
+        ListNode first = null, last = null, newNode;
         int num;
-        if(input.length>0){
-            for(int i=0;i<input.length;i++){
-                newNode=new ListNode(input[i]);
-                newNode.next=null;
-                if(first==null){
-                    first=newNode;
-                    last=newNode;
-                }
-                else{
-                    last.next=newNode;
-                    last=newNode;
+        if (input.length > 0) {
+            for (int i = 0; i < input.length; i++) {
+                newNode = new ListNode(input[i]);
+                newNode.next = null;
+                if (first == null) {
+                    first = newNode;
+                    last = newNode;
+                } else {
+                    last.next = newNode;
+                    last = newNode;
                 }
 
             }
         }
         return first;
     }
-    private static Node buildNode(char[] input){
-        Node first = null,last = null,newNode;
+
+    private static Node buildNode(char[] input) {
+        Node first = null, last = null, newNode;
         int num;
-        if(input.length>0){
-            for(int i=0;i<input.length;i++){
-                newNode=new Node(input[i]);
-                newNode.next=null;
-                if(first==null){
-                    first=newNode;
-                    last=newNode;
-                }
-                else{
-                    last.next=newNode;
-                    last=newNode;
+        if (input.length > 0) {
+            for (int i = 0; i < input.length; i++) {
+                newNode = new Node(input[i]);
+                newNode.next = null;
+                if (first == null) {
+                    first = newNode;
+                    last = newNode;
+                } else {
+                    last.next = newNode;
+                    last = newNode;
                 }
 
             }
@@ -89,11 +89,13 @@ public class LinkedListDemo {
 
     /**
      * 链表反转
+     *
      * @param head
+     *
      * @return
      */
     public static Node reverse(Node head) {
-        if(head == null || head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
@@ -101,7 +103,7 @@ public class LinkedListDemo {
         Node cur = head;
         Node next = head.next;
 
-        while(next != null) {
+        while (next != null) {
             cur.next = prev;
             prev = cur;
             cur = next;
@@ -113,16 +115,18 @@ public class LinkedListDemo {
 
     /**
      * 链表中环检测
+     *
      * @param head
+     *
      * @return
      */
     public static boolean existsCircle(Node head) {
         Node slow = head;
         Node fast = head;
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if(slow == fast) {
+            if (slow == fast) {
                 return true;
             }
         }
@@ -131,8 +135,10 @@ public class LinkedListDemo {
 
     /**
      * 两个有序链表合并
+     *
      * @param head1
      * @param head2
+     *
      * @return
      */
     public static Node merge(Node head1, Node head2) {
@@ -140,16 +146,16 @@ public class LinkedListDemo {
         Node guard = new Node('/');
         Node cur = guard;
 
-        while(head1 != null && head2 != null) {
-            if(head1.c <= head2.c) {
-                while(head1 != null && head1.c <= head2.c) {
+        while (head1 != null && head2 != null) {
+            if (head1.c <= head2.c) {
+                while (head1 != null && head1.c <= head2.c) {
                     cur.next = head1;
                     cur = cur.next;
                     head1 = head1.next;
 
                 }
             } else {
-                while(head2 != null && head1.c > head2.c) {
+                while (head2 != null && head1.c > head2.c) {
                     cur.next = head2;
                     cur = cur.next;
                     head2 = head2.next;
@@ -158,10 +164,10 @@ public class LinkedListDemo {
             }
         }
 
-        if(head1 != null) {
+        if (head1 != null) {
             cur.next = head1;
         }
-        if(head2 != null) {
+        if (head2 != null) {
             cur.next = head2;
         }
 
@@ -171,12 +177,14 @@ public class LinkedListDemo {
 
     /**
      * 删除链表倒数第n个的节点
+     *
      * @param head
      * @param n
+     *
      * @return
      */
     public static Node deleteLastN(Node head, int n) {
-        if(n < 1 || head == null) {
+        if (n < 1 || head == null) {
             return head;
         }
         Node guard = new Node('/');
@@ -185,33 +193,34 @@ public class LinkedListDemo {
         Node slow = guard;
         Node fast = guard;
 
-        for(int i = 0; i < n; i++) {
-            if(fast != null) {
+        for (int i = 0; i < n; i++) {
+            if (fast != null) {
                 fast = fast.next;
             }
         }
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next;
         }
         slow.next = slow.next.next;
         return guard.next;
     }
-    private static ListNode removeElements(ListNode head,int val){
-        if(head==null){
+
+    private static ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
             return null;
         }
-        ListNode p=head,q=head.next;
-        while(q!=null){
-            if(q.val==val){
-                p.next=q.next;
-                q=q.next;
-            }else{
-                p=p.next;
-                q=q.next;
+        ListNode p = head, q = head.next;
+        while (q != null) {
+            if (q.val == val) {
+                p.next = q.next;
+                q = q.next;
+            } else {
+                p = p.next;
+                q = q.next;
             }
         }
-        if(head.val==val){
+        if (head.val == val) {
             return head.next;
         }
         return head;
@@ -220,15 +229,17 @@ public class LinkedListDemo {
 
     /**
      * 求链表中间节点
+     *
      * @param head
      * @param n
+     *
      * @return
      */
     public static Node getMiddle(Node head, int n) {
         Node slow = head;
         Node fast = head;
 
-        while(fast.next != null && fast.next.next != null) {
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -238,11 +249,12 @@ public class LinkedListDemo {
 
     /**
      * main
+     *
      * @param args
      */
     public static void main(String[] args) {
-        char[] input1=new char[]{'a','b','c'};
-        char[] input2=new char[]{'c','d'};
+        char[] input1 = new char[]{'a', 'b', 'c'};
+        char[] input2 = new char[]{'c', 'd'};
         Node node1 = buildNode(input1);
         Node node2 = buildNode(input2);
         //ListNode listNode1 = reverseList(listNode);
